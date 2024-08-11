@@ -1,0 +1,884 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>explainerdashboard</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div class="container">
+<div><H1>Model Explainer</H1></div><ul class="nav nav-tabs" id="myTab" role="tablist">
+<li class="nav-item" role="presentation">
+    <button class="nav-link active" id="myTab0-tab"
+    data-bs-toggle="tab" type="button" data-bs-target="#myTab0" role="tab"
+    aria-selected="true" aria-controls="myTab0">Feature Importances</button>
+</li>
+
+<li class="nav-item" role="presentation">
+    <button class="nav-link" id="myTab1-tab"
+    data-bs-toggle="tab" type="button" data-bs-target="#myTab1" role="tab"
+    aria-selected="false" aria-controls="myTab1">Classification Stats</button>
+</li>
+
+<li class="nav-item" role="presentation">
+    <button class="nav-link" id="myTab2-tab"
+    data-bs-toggle="tab" type="button" data-bs-target="#myTab2" role="tab"
+    aria-selected="false" aria-controls="myTab2">Individual Predictions</button>
+</li>
+
+<li class="nav-item" role="presentation">
+    <button class="nav-link" id="myTab3-tab"
+    data-bs-toggle="tab" type="button" data-bs-target="#myTab3" role="tab"
+    aria-selected="false" aria-controls="myTab3">What if...</button>
+</li>
+
+<li class="nav-item" role="presentation">
+    <button class="nav-link" id="myTab4-tab"
+    data-bs-toggle="tab" type="button" data-bs-target="#myTab4" role="tab"
+    aria-selected="false" aria-controls="myTab4">Feature Dependence</button>
+</li>
+
+</ul>
+
+<div class="tab-content" id="myTabContent">
+
+
+<div class="tab-pane active" id="myTab0"
+     role="tabpanel" aria-labelledby="myTab0-tab"> <div></div>
+<div>
+    <div>
+    
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+
+<div class="row row-cols-1 g-4" style="margin-top: 20px;">
+    
+<div class="col">
+
+<div class="card h-100" >
+  <div class="card-header"><h3 class="card-title">Feature Importances</h3></div>
+  <div class="card-body">
+    <div class="w-100">
+    
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+<div>                        <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-2.24.1.min.js"></script>                <div id="59740415-0997-4976-adba-9e4c22c6e82d" class="plotly-graph-div" style="height:420px; width:100%;"></div>            <script type="text/javascript">                                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("59740415-0997-4976-adba-9e4c22c6e82d")) {                    Plotly.newPlot(                        "59740415-0997-4976-adba-9e4c22c6e82d",                        [{"hoverinfo":"text","orientation":"h","x":[0.007305768833734833,0.008710745489068293,0.011075412622136675,0.011538784161772156,0.017926717441834855,0.01792671744183488,0.0190787085507182,0.03432345051850295,0.1382243758604041,0.13822437586040442,0.17618523322617494],"y":["11. ohe__region_northwest","10. ohe__region_southeast","9. ohe__region_southwest","8. ohe__region_northeast","7. ohe__sex_female","6. ohe__sex_male","5. scaling__bmi","4. scaling__children","3. ohe__smoker_yes","2. ohe__smoker_no","1. scaling__age"],"type":"bar"}],                        {"plot_bgcolor":"#fff","showlegend":false,"title":{"text":"Average impact on predicted charges\u003cbr\u003e(mean absolute SHAP value)"},"template":{"data":{"scatter":[{"type":"scatter"}]}},"yaxis":{"automargin":true},"xaxis":{"automargin":true,"title":{"text":""}},"height":420,"margin":{"b":40,"l":147,"pad":4,"r":40,"t":40}},                        {"responsive": true}                    )                };                            </script>        </div>
+</div>
+        
+</div> 
+    
+    </div>
+  </div>
+</div>
+
+</div>
+        
+</div> 
+    
+</div>
+        
+</div> 
+        </div><div>
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+
+<div class="row row-cols-1 g-4" style="margin-top: 20px;">
+    
+<div class="col">
+<div></div>
+</div>
+        
+</div> 
+    
+</div>
+        
+</div> 
+    
+    </div>
+</div>
+    
+</div>
+
+<div class="tab-pane " id="myTab1"
+     role="tabpanel" aria-labelledby="myTab1-tab"> <div></div>
+<div>
+    <div>
+    
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+
+<div class="row row-cols-2 g-4" style="margin-top: 20px;">
+    
+<div class="col">
+
+<div class="card h-100" >
+  <div class="card-header"><h3 class="card-title">Model performance metrics</h3></div>
+  <div class="card-body">
+    <div class="w-100">
+    
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">metric</th>
+      <th scope="col">Score</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>accuracy</td>
+      <td>0.888</td>
+    </tr>
+    <tr>
+      <td>precision</td>
+      <td>0.943</td>
+    </tr>
+    <tr>
+      <td>recall</td>
+      <td>0.806</td>
+    </tr>
+    <tr>
+      <td>f1</td>
+      <td>0.87</td>
+    </tr>
+    <tr>
+      <td>roc_auc_score</td>
+      <td>0.919</td>
+    </tr>
+    <tr>
+      <td>pr_auc_score</td>
+      <td>0.934</td>
+    </tr>
+    <tr>
+      <td>log_loss</td>
+      <td>1.164</td>
+    </tr>
+
+  </tbody>
+</table>
+    
+</div>
+        
+</div> 
+    
+    </div>
+  </div>
+</div>
+
+</div>
+        
+<div class="col">
+
+<div class="card h-100" >
+  <div class="card-header"><h3 class="card-title">Confusion Matrix</h3><h6 class="card-subtitle">How many false positives and false negatives?</h6></div>
+  <div class="card-body">
+    <div class="w-100">
+    
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+<div>                        <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-2.24.1.min.js"></script>                <div id="615036db-9e32-40c8-8a6f-70b66758e2bc" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script type="text/javascript">                                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("615036db-9e32-40c8-8a6f-70b66758e2bc")) {                    Plotly.newPlot(                        "615036db-9e32-40c8-8a6f-70b66758e2bc",                        [{"colorscale":[[0.0,"rgb(247,251,255)"],[0.125,"rgb(222,235,247)"],[0.25,"rgb(198,219,239)"],[0.375,"rgb(158,202,225)"],[0.5,"rgb(107,174,214)"],[0.625,"rgb(66,146,198)"],[0.75,"rgb(33,113,181)"],[0.875,"rgb(8,81,156)"],[1.0,"rgb(8,48,107)"]],"hoverinfo":"skip","showscale":false,"x":[" 0"," 1"],"y":[" 0"," 1"],"z":[[51.5,2.2],[9.0,37.3]],"zmax":130,"zmin":0,"type":"heatmap"}],                        {"plot_bgcolor":"#fff","title":{"text":"Confusion Matrix"},"xaxis":{"constrain":"domain","showgrid":false,"tickmode":"array","ticktext":[" 0"," 1"],"tickvals":[" 0"," 1"],"title":{"text":"predicted"}},"yaxis":{"autorange":"reversed","scaleanchor":"x","scaleratio":1,"showgrid":false,"side":"left","tickmode":"array","ticktext":[" 0"," 1"],"tickvals":[" 0"," 1"],"title":{"standoff":20,"text":"observed"}},"template":{"data":{"scatter":[{"type":"scatter"}]}},"annotations":[{"font":{"size":20},"showarrow":false,"text":"51.5%","x":" 0","y":" 0"},{"font":{"size":12},"showarrow":false,"text":" \u003cbr\u003e \u003cbr\u003e \u003cbr\u003e(138)","x":" 0","y":" 0"},{"font":{"size":20},"showarrow":false,"text":"2.2%","x":" 1","y":" 0"},{"font":{"size":12},"showarrow":false,"text":" \u003cbr\u003e \u003cbr\u003e \u003cbr\u003e(6)","x":" 1","y":" 0"},{"font":{"size":20},"showarrow":false,"text":"9.0%","x":" 0","y":" 1"},{"font":{"size":12},"showarrow":false,"text":" \u003cbr\u003e \u003cbr\u003e \u003cbr\u003e(24)","x":" 0","y":" 1"},{"font":{"size":20},"showarrow":false,"text":"37.3%","x":" 1","y":" 1"},{"font":{"size":12},"showarrow":false,"text":" \u003cbr\u003e \u003cbr\u003e \u003cbr\u003e(100)","x":" 1","y":" 1"}],"margin":{"t":40,"b":40,"l":7,"r":40}},                        {"responsive": true}                    )                };                            </script>        </div>
+</div>
+        
+</div> 
+    
+    </div>
+  </div>
+</div>
+
+</div>
+        
+</div> 
+    
+</div>
+        
+</div> 
+        </div><div>
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+
+<div class="row row-cols-2 g-4" style="margin-top: 20px;">
+    
+<div class="col">
+
+<div class="card h-100" >
+  <div class="card-header"><h3 class="card-title">Precision Plot</h3><h6 class="card-subtitle">Does fraction positive increase with predicted probability?</h6></div>
+  <div class="card-body">
+    <div class="w-100">
+    
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+<div>                        <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-2.24.1.min.js"></script>                <div id="63a51a5c-f15d-4600-a106-909d9a71381b" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script type="text/javascript">                                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("63a51a5c-f15d-4600-a106-909d9a71381b")) {                    Plotly.newPlot(                        "63a51a5c-f15d-4600-a106-909d9a71381b",                        [{"name":"counts","width":[0.09000000000000001,0.09000000000000001,0.09000000000000004,0.08999999999999998,0.08999999999999998,0.0900000000000001,0.08999999999999998,0.08999999999999998,0.08999999999999998,0.08999999999999998],"x":[0.05,0.15000000000000002,0.25,0.35000000000000003,0.45,0.55,0.6500000000000001,0.75,0.8500000000000001,0.95],"y":[82,34,20,18,8,10,6,5,11,74],"type":"bar"},{"name":"percentage 1","x":[0.007,0.146,0.25,0.356,0.455,0.542,0.635,0.764,0.847,0.997],"y":[0.098,0.176,0.25,0.056,0.5,0.7,0.667,0.8,1.0,1.0],"yaxis":"y2","type":"scatter"}],                        {"plot_bgcolor":"#fff","shapes":[{"type":"line","x0":0.5,"x1":0.5,"xref":"x","y0":0,"y1":1.0,"yref":"y2"}],"title":{"text":"percentage 1 vs predicted probability"},"xaxis":{"title":{"text":"predicted probability"}},"yaxis":{"title":{"text":"counts"}},"yaxis2":{"overlaying":"y","rangemode":"tozero","side":"right","tickfont":{"color":"rgb(148, 103, 189)"},"title":{"font":{"color":"rgb(148, 103, 189)"},"text":"percentage"}},"template":{"data":{"scatter":[{"type":"scatter"}]}},"legend":{"orientation":"h","xanchor":"center","y":-0.2,"x":0.5},"margin":{"t":40,"b":40,"l":40,"r":40},"annotations":[{"text":"cutoff=0.5","x":0.5,"y":0.1,"yref":"y2"}]},                        {"responsive": true}                    )                };                            </script>        </div>
+</div>
+        
+</div> 
+    
+    </div>
+  </div>
+</div>
+
+</div>
+        
+<div class="col">
+
+<div class="card h-100" >
+  <div class="card-header"><h3 class="card-title">Classification Plot</h3><h6 class="card-subtitle">Distribution of labels above and below cutoff</h6></div>
+  <div class="card-body">
+    <div class="w-100">
+    
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+<div>                        <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-2.24.1.min.js"></script>                <div id="91b298d6-1752-4c4f-99eb-8f4a135128f9" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script type="text/javascript">                                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("91b298d6-1752-4c4f-99eb-8f4a135128f9")) {                    Plotly.newPlot(                        "91b298d6-1752-4c4f-99eb-8f4a135128f9",                        [{"hoverinfo":"text","name":"0","text":["\u003cb\u003e138\u003c\u002fb\u003e (85.19%)","\u003cb\u003e6\u003c\u002fb\u003e (5.66%)","\u003cb\u003e144\u003c\u002fb\u003e (53.73%)"],"textposition":"auto","x":["below cutoff","above cutoff","total"],"y":[85.18518518518519,5.660377358490566,53.73134328358209],"type":"bar"},{"hoverinfo":"text","name":"1","text":["\u003cb\u003e24\u003c\u002fb\u003e (14.81%)","\u003cb\u003e100\u003c\u002fb\u003e (94.34%)","\u003cb\u003e124\u003c\u002fb\u003e (46.27%)"],"textposition":"auto","x":["below cutoff","above cutoff","total"],"y":[14.814814814814815,94.33962264150944,46.26865671641791],"type":"bar"}],                        {"template":{"data":{"scatter":[{"type":"scatter"}]}},"title":{"text":"Percentage above and below cutoff"},"margin":{"t":40,"b":40,"l":40,"r":40},"barmode":"stack","legend":{"orientation":"h","xanchor":"center","y":-0.2,"x":0.5}},                        {"responsive": true}                    )                };                            </script>        </div>
+</div>
+        
+</div> 
+    
+    </div>
+  </div>
+</div>
+
+</div>
+        
+</div> 
+    
+</div>
+        
+</div> 
+        </div><div>
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+
+<div class="row row-cols-2 g-4" style="margin-top: 20px;">
+    
+<div class="col">
+
+<div class="card h-100" >
+  <div class="card-header"><h3 class="card-title">ROC AUC Plot</h3><h6 class="card-subtitle">Trade-off between False positives and false negatives</h6></div>
+  <div class="card-body">
+    <div class="w-100">
+    
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+<div>                        <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-2.24.1.min.js"></script>                <div id="7f1f5e17-b03e-4f00-9481-9dfebcc716bb" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script type="text/javascript">                                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("7f1f5e17-b03e-4f00-9481-9dfebcc716bb")) {                    Plotly.newPlot(                        "7f1f5e17-b03e-4f00-9481-9dfebcc716bb",                        [{"hoverinfo":"text","mode":"lines","name":"ROC AUC CURVE","text":["threshold: inf \u003cbr\u003e FP: 0.00 \u003cbr\u003e TP: 0.00","threshold: 1.00 \u003cbr\u003e FP: 0.00 \u003cbr\u003e TP: 0.57","threshold: 0.78 \u003cbr\u003e FP: 0.00 \u003cbr\u003e TP: 0.70","threshold: 0.77 \u003cbr\u003e FP: 0.01 \u003cbr\u003e TP: 0.70","threshold: 0.67 \u003cbr\u003e FP: 0.01 \u003cbr\u003e TP: 0.73","threshold: 0.65 \u003cbr\u003e FP: 0.01 \u003cbr\u003e TP: 0.73","threshold: 0.62 \u003cbr\u003e FP: 0.01 \u003cbr\u003e TP: 0.75","threshold: 0.61 \u003cbr\u003e FP: 0.02 \u003cbr\u003e TP: 0.75","threshold: 0.58 \u003cbr\u003e FP: 0.02 \u003cbr\u003e TP: 0.76","threshold: 0.58 \u003cbr\u003e FP: 0.03 \u003cbr\u003e TP: 0.76","threshold: 0.57 \u003cbr\u003e FP: 0.03 \u003cbr\u003e TP: 0.77","threshold: 0.55 \u003cbr\u003e FP: 0.03 \u003cbr\u003e TP: 0.77","threshold: 0.53 \u003cbr\u003e FP: 0.03 \u003cbr\u003e TP: 0.78","threshold: 0.52 \u003cbr\u003e FP: 0.04 \u003cbr\u003e TP: 0.78","threshold: 0.48 \u003cbr\u003e FP: 0.04 \u003cbr\u003e TP: 0.83","threshold: 0.42 \u003cbr\u003e FP: 0.07 \u003cbr\u003e TP: 0.83","threshold: 0.40 \u003cbr\u003e FP: 0.07 \u003cbr\u003e TP: 0.84","threshold: 0.32 \u003cbr\u003e FP: 0.17 \u003cbr\u003e TP: 0.84","threshold: 0.32 \u003cbr\u003e FP: 0.17 \u003cbr\u003e TP: 0.85","threshold: 0.30 \u003cbr\u003e FP: 0.19 \u003cbr\u003e TP: 0.85","threshold: 0.29 \u003cbr\u003e FP: 0.19 \u003cbr\u003e TP: 0.85","threshold: 0.29 \u003cbr\u003e FP: 0.19 \u003cbr\u003e TP: 0.85","threshold: 0.29 \u003cbr\u003e FP: 0.19 \u003cbr\u003e TP: 0.86","threshold: 0.27 \u003cbr\u003e FP: 0.22 \u003cbr\u003e TP: 0.86","threshold: 0.26 \u003cbr\u003e FP: 0.22 \u003cbr\u003e TP: 0.88","threshold: 0.22 \u003cbr\u003e FP: 0.28 \u003cbr\u003e TP: 0.88","threshold: 0.22 \u003cbr\u003e FP: 0.28 \u003cbr\u003e TP: 0.89","threshold: 0.18 \u003cbr\u003e FP: 0.33 \u003cbr\u003e TP: 0.89","threshold: 0.18 \u003cbr\u003e FP: 0.33 \u003cbr\u003e TP: 0.90","threshold: 0.16 \u003cbr\u003e FP: 0.36 \u003cbr\u003e TP: 0.90","threshold: 0.15 \u003cbr\u003e FP: 0.36 \u003cbr\u003e TP: 0.91","threshold: 0.14 \u003cbr\u003e FP: 0.38 \u003cbr\u003e TP: 0.91","threshold: 0.14 \u003cbr\u003e FP: 0.38 \u003cbr\u003e TP: 0.92","threshold: 0.13 \u003cbr\u003e FP: 0.42 \u003cbr\u003e TP: 0.92","threshold: 0.13 \u003cbr\u003e FP: 0.42 \u003cbr\u003e TP: 0.93","threshold: 0.12 \u003cbr\u003e FP: 0.49 \u003cbr\u003e TP: 0.93","threshold: 0.12 \u003cbr\u003e FP: 0.49 \u003cbr\u003e TP: 0.94","threshold: 0.07 \u003cbr\u003e FP: 0.51 \u003cbr\u003e TP: 0.94","threshold: 0.06 \u003cbr\u003e FP: 0.51 \u003cbr\u003e TP: 0.94","threshold: 0.01 \u003cbr\u003e FP: 0.55 \u003cbr\u003e TP: 0.94","threshold: 0.00 \u003cbr\u003e FP: 1.00 \u003cbr\u003e TP: 1.00"],"x":[0.0,0.0,0.0,0.006944444444444444,0.006944444444444444,0.013888888888888888,0.013888888888888888,0.020833333333333332,0.020833333333333332,0.027777777777777776,0.027777777777777776,0.034722222222222224,0.034722222222222224,0.041666666666666664,0.041666666666666664,0.06944444444444445,0.06944444444444445,0.1736111111111111,0.1736111111111111,0.1875,0.1875,0.19444444444444445,0.19444444444444445,0.2152777777777778,0.2152777777777778,0.2847222222222222,0.2847222222222222,0.3333333333333333,0.3333333333333333,0.3611111111111111,0.3611111111111111,0.3819444444444444,0.3819444444444444,0.4236111111111111,0.4236111111111111,0.4861111111111111,0.4861111111111111,0.5138888888888888,0.5138888888888888,0.5486111111111112,1.0],"y":[0.0,0.5725806451612904,0.7016129032258065,0.7016129032258065,0.7258064516129032,0.7258064516129032,0.75,0.75,0.7580645161290323,0.7580645161290323,0.7661290322580645,0.7661290322580645,0.782258064516129,0.782258064516129,0.8306451612903226,0.8306451612903226,0.8387096774193549,0.8387096774193549,0.8467741935483871,0.8467741935483871,0.8548387096774194,0.8548387096774194,0.8629032258064516,0.8629032258064516,0.8790322580645161,0.8790322580645161,0.8870967741935484,0.8870967741935484,0.8951612903225806,0.8951612903225806,0.9112903225806451,0.9112903225806451,0.9193548387096774,0.9193548387096774,0.9274193548387096,0.9274193548387096,0.9354838709677419,0.9354838709677419,0.9435483870967742,0.9435483870967742,1.0],"type":"scatter"}],                        {"hovermode":"closest","plot_bgcolor":"#fff","title":{"text":"ROC AUC CURVE"},"xaxis":{"constrain":"domain","range":[0,1],"title":{"text":"False Positive Rate"}},"yaxis":{"constrain":"domain","range":[0,1],"scaleanchor":"x","scaleratio":1,"title":{"text":"True Positive Rate"}},"template":{"data":{"scatter":[{"type":"scatter"}]}},"annotations":[{"align":"right","showarrow":false,"text":"roc-auc-score: 0.92","x":0.6,"xanchor":"left","y":0.4,"yanchor":"top"},{"align":"right","showarrow":false,"text":"cutoff: 0.50","x":0.6,"xanchor":"left","y":0.35,"yanchor":"top"},{"align":"right","showarrow":false,"text":"TPR: 0.78","x":0.6,"xanchor":"left","y":0.3,"yanchor":"top"},{"align":"right","showarrow":false,"text":"FPR: 0.04","x":0.6,"xanchor":"left","y":0.24,"yanchor":"top"}],"shapes":[{"line":{"color":"darkslategray","dash":"dot","width":4},"type":"line","x0":0,"x1":1,"xref":"x","y0":0,"y1":1,"yref":"y"},{"line":{"color":"lightslategray","width":1},"type":"line","x0":0,"x1":1,"xref":"x","y0":0.782258064516129,"y1":0.782258064516129,"yref":"y"},{"line":{"color":"lightslategray","width":1},"type":"line","x0":0.041666666666666664,"x1":0.041666666666666664,"xref":"x","y0":0,"y1":1,"yref":"y"}],"margin":{"t":40,"b":40,"l":40,"r":40}},                        {"responsive": true}                    )                };                            </script>        </div>
+</div>
+        
+</div> 
+    
+    </div>
+  </div>
+</div>
+
+</div>
+        
+<div class="col">
+
+<div class="card h-100" >
+  <div class="card-header"><h3 class="card-title">PR AUC Plot</h3><h6 class="card-subtitle">Trade-off between Precision and Recall</h6></div>
+  <div class="card-body">
+    <div class="w-100">
+    
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+<div>                        <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-2.24.1.min.js"></script>                <div id="bc8bf851-feb3-4614-96df-55969f8161b7" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script type="text/javascript">                                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("bc8bf851-feb3-4614-96df-55969f8161b7")) {                    Plotly.newPlot(                        "bc8bf851-feb3-4614-96df-55969f8161b7",                        [{"hoverinfo":"text","mode":"lines","name":"PR AUC CURVE","text":["threshold: 0.00 \u003cbr\u003eprecision: 0.46 \u003cbr\u003erecall: 1.00","threshold: 0.01 \u003cbr\u003eprecision: 0.60 \u003cbr\u003erecall: 0.94","threshold: 0.01 \u003cbr\u003eprecision: 0.60 \u003cbr\u003erecall: 0.94","threshold: 0.01 \u003cbr\u003eprecision: 0.60 \u003cbr\u003erecall: 0.94","threshold: 0.05 \u003cbr\u003eprecision: 0.61 \u003cbr\u003erecall: 0.94","threshold: 0.06 \u003cbr\u003eprecision: 0.61 \u003cbr\u003erecall: 0.94","threshold: 0.06 \u003cbr\u003eprecision: 0.61 \u003cbr\u003erecall: 0.94","threshold: 0.07 \u003cbr\u003eprecision: 0.61 \u003cbr\u003erecall: 0.94","threshold: 0.09 \u003cbr\u003eprecision: 0.61 \u003cbr\u003erecall: 0.94","threshold: 0.09 \u003cbr\u003eprecision: 0.62 \u003cbr\u003erecall: 0.94","threshold: 0.09 \u003cbr\u003eprecision: 0.62 \u003cbr\u003erecall: 0.94","threshold: 0.12 \u003cbr\u003eprecision: 0.62 \u003cbr\u003erecall: 0.94","threshold: 0.12 \u003cbr\u003eprecision: 0.62 \u003cbr\u003erecall: 0.93","threshold: 0.12 \u003cbr\u003eprecision: 0.62 \u003cbr\u003erecall: 0.93","threshold: 0.12 \u003cbr\u003eprecision: 0.63 \u003cbr\u003erecall: 0.93","threshold: 0.12 \u003cbr\u003eprecision: 0.63 \u003cbr\u003erecall: 0.93","threshold: 0.12 \u003cbr\u003eprecision: 0.64 \u003cbr\u003erecall: 0.93","threshold: 0.12 \u003cbr\u003eprecision: 0.64 \u003cbr\u003erecall: 0.93","threshold: 0.12 \u003cbr\u003eprecision: 0.64 \u003cbr\u003erecall: 0.93","threshold: 0.13 \u003cbr\u003eprecision: 0.65 \u003cbr\u003erecall: 0.93","threshold: 0.13 \u003cbr\u003eprecision: 0.65 \u003cbr\u003erecall: 0.93","threshold: 0.13 \u003cbr\u003eprecision: 0.65 \u003cbr\u003erecall: 0.93","threshold: 0.13 \u003cbr\u003eprecision: 0.65 \u003cbr\u003erecall: 0.92","threshold: 0.13 \u003cbr\u003eprecision: 0.66 \u003cbr\u003erecall: 0.92","threshold: 0.13 \u003cbr\u003eprecision: 0.66 \u003cbr\u003erecall: 0.92","threshold: 0.13 \u003cbr\u003eprecision: 0.66 \u003cbr\u003erecall: 0.92","threshold: 0.13 \u003cbr\u003eprecision: 0.67 \u003cbr\u003erecall: 0.92","threshold: 0.14 \u003cbr\u003eprecision: 0.67 \u003cbr\u003erecall: 0.92","threshold: 0.14 \u003cbr\u003eprecision: 0.67 \u003cbr\u003erecall: 0.92","threshold: 0.14 \u003cbr\u003eprecision: 0.67 \u003cbr\u003erecall: 0.91","threshold: 0.14 \u003cbr\u003eprecision: 0.68 \u003cbr\u003erecall: 0.91","threshold: 0.14 \u003cbr\u003eprecision: 0.68 \u003cbr\u003erecall: 0.91","threshold: 0.15 \u003cbr\u003eprecision: 0.68 \u003cbr\u003erecall: 0.91","threshold: 0.16 \u003cbr\u003eprecision: 0.68 \u003cbr\u003erecall: 0.90","threshold: 0.16 \u003cbr\u003eprecision: 0.68 \u003cbr\u003erecall: 0.90","threshold: 0.16 \u003cbr\u003eprecision: 0.69 \u003cbr\u003erecall: 0.90","threshold: 0.16 \u003cbr\u003eprecision: 0.69 \u003cbr\u003erecall: 0.90","threshold: 0.17 \u003cbr\u003eprecision: 0.69 \u003cbr\u003erecall: 0.90","threshold: 0.18 \u003cbr\u003eprecision: 0.70 \u003cbr\u003erecall: 0.90","threshold: 0.18 \u003cbr\u003eprecision: 0.70 \u003cbr\u003erecall: 0.89","threshold: 0.18 \u003cbr\u003eprecision: 0.70 \u003cbr\u003erecall: 0.89","threshold: 0.18 \u003cbr\u003eprecision: 0.71 \u003cbr\u003erecall: 0.89","threshold: 0.19 \u003cbr\u003eprecision: 0.71 \u003cbr\u003erecall: 0.89","threshold: 0.19 \u003cbr\u003eprecision: 0.71 \u003cbr\u003erecall: 0.89","threshold: 0.20 \u003cbr\u003eprecision: 0.72 \u003cbr\u003erecall: 0.89","threshold: 0.20 \u003cbr\u003eprecision: 0.72 \u003cbr\u003erecall: 0.89","threshold: 0.22 \u003cbr\u003eprecision: 0.73 \u003cbr\u003erecall: 0.89","threshold: 0.22 \u003cbr\u003eprecision: 0.73 \u003cbr\u003erecall: 0.88","threshold: 0.23 \u003cbr\u003eprecision: 0.73 \u003cbr\u003erecall: 0.88","threshold: 0.23 \u003cbr\u003eprecision: 0.74 \u003cbr\u003erecall: 0.88","threshold: 0.23 \u003cbr\u003eprecision: 0.74 \u003cbr\u003erecall: 0.88","threshold: 0.23 \u003cbr\u003eprecision: 0.75 \u003cbr\u003erecall: 0.88","threshold: 0.23 \u003cbr\u003eprecision: 0.75 \u003cbr\u003erecall: 0.88","threshold: 0.24 \u003cbr\u003eprecision: 0.76 \u003cbr\u003erecall: 0.88","threshold: 0.25 \u003cbr\u003eprecision: 0.76 \u003cbr\u003erecall: 0.88","threshold: 0.25 \u003cbr\u003eprecision: 0.77 \u003cbr\u003erecall: 0.88","threshold: 0.26 \u003cbr\u003eprecision: 0.77 \u003cbr\u003erecall: 0.88","threshold: 0.26 \u003cbr\u003eprecision: 0.78 \u003cbr\u003erecall: 0.88","threshold: 0.26 \u003cbr\u003eprecision: 0.78 \u003cbr\u003erecall: 0.87","threshold: 0.27 \u003cbr\u003eprecision: 0.78 \u003cbr\u003erecall: 0.86","threshold: 0.27 \u003cbr\u003eprecision: 0.78 \u003cbr\u003erecall: 0.86","threshold: 0.27 \u003cbr\u003eprecision: 0.79 \u003cbr\u003erecall: 0.86","threshold: 0.29 \u003cbr\u003eprecision: 0.79 \u003cbr\u003erecall: 0.86","threshold: 0.29 \u003cbr\u003eprecision: 0.79 \u003cbr\u003erecall: 0.85","threshold: 0.29 \u003cbr\u003eprecision: 0.80 \u003cbr\u003erecall: 0.85","threshold: 0.30 \u003cbr\u003eprecision: 0.80 \u003cbr\u003erecall: 0.85","threshold: 0.31 \u003cbr\u003eprecision: 0.80 \u003cbr\u003erecall: 0.85","threshold: 0.32 \u003cbr\u003eprecision: 0.81 \u003cbr\u003erecall: 0.85","threshold: 0.32 \u003cbr\u003eprecision: 0.81 \u003cbr\u003erecall: 0.84","threshold: 0.33 \u003cbr\u003eprecision: 0.81 \u003cbr\u003erecall: 0.84","threshold: 0.33 \u003cbr\u003eprecision: 0.82 \u003cbr\u003erecall: 0.84","threshold: 0.34 \u003cbr\u003eprecision: 0.83 \u003cbr\u003erecall: 0.84","threshold: 0.35 \u003cbr\u003eprecision: 0.83 \u003cbr\u003erecall: 0.84","threshold: 0.35 \u003cbr\u003eprecision: 0.84 \u003cbr\u003erecall: 0.84","threshold: 0.37 \u003cbr\u003eprecision: 0.85 \u003cbr\u003erecall: 0.84","threshold: 0.37 \u003cbr\u003eprecision: 0.85 \u003cbr\u003erecall: 0.84","threshold: 0.38 \u003cbr\u003eprecision: 0.86 \u003cbr\u003erecall: 0.84","threshold: 0.38 \u003cbr\u003eprecision: 0.87 \u003cbr\u003erecall: 0.84","threshold: 0.38 \u003cbr\u003eprecision: 0.87 \u003cbr\u003erecall: 0.84","threshold: 0.39 \u003cbr\u003eprecision: 0.88 \u003cbr\u003erecall: 0.84","threshold: 0.39 \u003cbr\u003eprecision: 0.89 \u003cbr\u003erecall: 0.84","threshold: 0.40 \u003cbr\u003eprecision: 0.90 \u003cbr\u003erecall: 0.84","threshold: 0.40 \u003cbr\u003eprecision: 0.90 \u003cbr\u003erecall: 0.84","threshold: 0.40 \u003cbr\u003eprecision: 0.91 \u003cbr\u003erecall: 0.84","threshold: 0.42 \u003cbr\u003eprecision: 0.91 \u003cbr\u003erecall: 0.83","threshold: 0.44 \u003cbr\u003eprecision: 0.92 \u003cbr\u003erecall: 0.83","threshold: 0.45 \u003cbr\u003eprecision: 0.93 \u003cbr\u003erecall: 0.83","threshold: 0.46 \u003cbr\u003eprecision: 0.94 \u003cbr\u003erecall: 0.83","threshold: 0.48 \u003cbr\u003eprecision: 0.94 \u003cbr\u003erecall: 0.83","threshold: 0.49 \u003cbr\u003eprecision: 0.94 \u003cbr\u003erecall: 0.82","threshold: 0.50 \u003cbr\u003eprecision: 0.94 \u003cbr\u003erecall: 0.81","threshold: 0.50 \u003cbr\u003eprecision: 0.94 \u003cbr\u003erecall: 0.81","threshold: 0.51 \u003cbr\u003eprecision: 0.94 \u003cbr\u003erecall: 0.80","threshold: 0.52 \u003cbr\u003eprecision: 0.94 \u003cbr\u003erecall: 0.79","threshold: 0.52 \u003cbr\u003eprecision: 0.94 \u003cbr\u003erecall: 0.78","threshold: 0.53 \u003cbr\u003eprecision: 0.95 \u003cbr\u003erecall: 0.78","threshold: 0.55 \u003cbr\u003eprecision: 0.95 \u003cbr\u003erecall: 0.77","threshold: 0.55 \u003cbr\u003eprecision: 0.95 \u003cbr\u003erecall: 0.77","threshold: 0.57 \u003cbr\u003eprecision: 0.96 \u003cbr\u003erecall: 0.77","threshold: 0.58 \u003cbr\u003eprecision: 0.96 \u003cbr\u003erecall: 0.76","threshold: 0.58 \u003cbr\u003eprecision: 0.97 \u003cbr\u003erecall: 0.76","threshold: 0.61 \u003cbr\u003eprecision: 0.97 \u003cbr\u003erecall: 0.75","threshold: 0.62 \u003cbr\u003eprecision: 0.98 \u003cbr\u003erecall: 0.75","threshold: 0.63 \u003cbr\u003eprecision: 0.98 \u003cbr\u003erecall: 0.74","threshold: 0.65 \u003cbr\u003eprecision: 0.98 \u003cbr\u003erecall: 0.73","threshold: 0.65 \u003cbr\u003eprecision: 0.98 \u003cbr\u003erecall: 0.73","threshold: 0.67 \u003cbr\u003eprecision: 0.99 \u003cbr\u003erecall: 0.73","threshold: 0.74 \u003cbr\u003eprecision: 0.99 \u003cbr\u003erecall: 0.72","threshold: 0.74 \u003cbr\u003eprecision: 0.99 \u003cbr\u003erecall: 0.71","threshold: 0.77 \u003cbr\u003eprecision: 0.99 \u003cbr\u003erecall: 0.70","threshold: 0.78 \u003cbr\u003eprecision: 1.00 \u003cbr\u003erecall: 0.70","threshold: 0.80 \u003cbr\u003eprecision: 1.00 \u003cbr\u003erecall: 0.69","threshold: 0.81 \u003cbr\u003eprecision: 1.00 \u003cbr\u003erecall: 0.69","threshold: 0.81 \u003cbr\u003eprecision: 1.00 \u003cbr\u003erecall: 0.68","threshold: 0.82 \u003cbr\u003eprecision: 1.00 \u003cbr\u003erecall: 0.67","threshold: 0.82 \u003cbr\u003eprecision: 1.00 \u003cbr\u003erecall: 0.66","threshold: 0.83 \u003cbr\u003eprecision: 1.00 \u003cbr\u003erecall: 0.65","threshold: 0.83 \u003cbr\u003eprecision: 1.00 \u003cbr\u003erecall: 0.65","threshold: 0.86 \u003cbr\u003eprecision: 1.00 \u003cbr\u003erecall: 0.64","threshold: 0.86 \u003cbr\u003eprecision: 1.00 \u003cbr\u003erecall: 0.63","threshold: 0.88 \u003cbr\u003eprecision: 1.00 \u003cbr\u003erecall: 0.62","threshold: 0.89 \u003cbr\u003eprecision: 1.00 \u003cbr\u003erecall: 0.61","threshold: 0.90 \u003cbr\u003eprecision: 1.00 \u003cbr\u003erecall: 0.60","threshold: 0.90 \u003cbr\u003eprecision: 1.00 \u003cbr\u003erecall: 0.60","threshold: 0.91 \u003cbr\u003eprecision: 1.00 \u003cbr\u003erecall: 0.59","threshold: 0.93 \u003cbr\u003eprecision: 1.00 \u003cbr\u003erecall: 0.58","threshold: 1.00 \u003cbr\u003eprecision: 1.00 \u003cbr\u003erecall: 0.57"],"x":[0.4626865671641791,0.5969387755102041,0.6,0.6030927835051546,0.6062176165803109,0.609375,0.612565445026178,0.6105263157894737,0.6137566137566137,0.6170212765957447,0.6203208556149733,0.6236559139784946,0.6216216216216216,0.625,0.6284153005464481,0.6318681318681318,0.6353591160220995,0.6388888888888888,0.6424581005586593,0.6460674157303371,0.6497175141242938,0.6534090909090909,0.6514285714285715,0.6551724137931034,0.6589595375722543,0.6627906976744186,0.6666666666666666,0.6705882352941176,0.6745562130177515,0.6726190476190477,0.6766467065868264,0.6807228915662651,0.6848484848484848,0.6829268292682927,0.6809815950920245,0.6851851851851852,0.6894409937888198,0.69375,0.6981132075471698,0.6962025316455697,0.7006369426751592,0.7051282051282052,0.7096774193548387,0.7142857142857143,0.7189542483660131,0.7236842105263158,0.7284768211920529,0.7266666666666667,0.7315436241610739,0.7364864864864865,0.7414965986394558,0.7465753424657534,0.7517241379310344,0.7569444444444444,0.7622377622377622,0.7676056338028169,0.7730496453900709,0.7785714285714286,0.7769784172661871,0.7753623188405797,0.781021897810219,0.7867647058823529,0.7925925925925926,0.7910447761194029,0.7969924812030075,0.7954545454545454,0.8015267175572519,0.8076923076923077,0.8062015503875969,0.8125,0.8188976377952756,0.8253968253968254,0.832,0.8387096774193549,0.8455284552845529,0.8524590163934426,0.859504132231405,0.8666666666666667,0.8739495798319328,0.8813559322033898,0.8888888888888888,0.896551724137931,0.9043478260869565,0.9122807017543859,0.911504424778761,0.9196428571428571,0.9279279279279279,0.9363636363636364,0.944954128440367,0.9444444444444444,0.9439252336448598,0.9433962264150944,0.9428571428571428,0.9423076923076923,0.941747572815534,0.9509803921568627,0.9504950495049505,0.95,0.9595959595959596,0.9591836734693877,0.9690721649484536,0.96875,0.9789473684210527,0.9787234042553191,0.978494623655914,0.9782608695652174,0.989010989010989,0.9888888888888889,0.9887640449438202,0.9886363636363636,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0],"y":[1.0,0.9435483870967742,0.9435483870967742,0.9435483870967742,0.9435483870967742,0.9435483870967742,0.9435483870967742,0.9354838709677419,0.9354838709677419,0.9354838709677419,0.9354838709677419,0.9354838709677419,0.9274193548387096,0.9274193548387096,0.9274193548387096,0.9274193548387096,0.9274193548387096,0.9274193548387096,0.9274193548387096,0.9274193548387096,0.9274193548387096,0.9274193548387096,0.9193548387096774,0.9193548387096774,0.9193548387096774,0.9193548387096774,0.9193548387096774,0.9193548387096774,0.9193548387096774,0.9112903225806451,0.9112903225806451,0.9112903225806451,0.9112903225806451,0.9032258064516129,0.8951612903225806,0.8951612903225806,0.8951612903225806,0.8951612903225806,0.8951612903225806,0.8870967741935484,0.8870967741935484,0.8870967741935484,0.8870967741935484,0.8870967741935484,0.8870967741935484,0.8870967741935484,0.8870967741935484,0.8790322580645161,0.8790322580645161,0.8790322580645161,0.8790322580645161,0.8790322580645161,0.8790322580645161,0.8790322580645161,0.8790322580645161,0.8790322580645161,0.8790322580645161,0.8790322580645161,0.8709677419354839,0.8629032258064516,0.8629032258064516,0.8629032258064516,0.8629032258064516,0.8548387096774194,0.8548387096774194,0.8467741935483871,0.8467741935483871,0.8467741935483871,0.8387096774193549,0.8387096774193549,0.8387096774193549,0.8387096774193549,0.8387096774193549,0.8387096774193549,0.8387096774193549,0.8387096774193549,0.8387096774193549,0.8387096774193549,0.8387096774193549,0.8387096774193549,0.8387096774193549,0.8387096774193549,0.8387096774193549,0.8387096774193549,0.8306451612903226,0.8306451612903226,0.8306451612903226,0.8306451612903226,0.8306451612903226,0.8225806451612904,0.8145161290322581,0.8064516129032258,0.7983870967741935,0.7903225806451613,0.782258064516129,0.782258064516129,0.7741935483870968,0.7661290322580645,0.7661290322580645,0.7580645161290323,0.7580645161290323,0.75,0.75,0.7419354838709677,0.7338709677419355,0.7258064516129032,0.7258064516129032,0.717741935483871,0.7096774193548387,0.7016129032258065,0.7016129032258065,0.6935483870967742,0.6854838709677419,0.6774193548387096,0.6693548387096774,0.6612903225806451,0.6532258064516129,0.6451612903225806,0.6370967741935484,0.6290322580645161,0.6209677419354839,0.6129032258064516,0.6048387096774194,0.5967741935483871,0.5887096774193549,0.5806451612903226,0.5725806451612904,0.0],"type":"scatter"}],                        {"hovermode":"closest","plot_bgcolor":"#fff","title":{"text":"PR AUC CURVE"},"xaxis":{"constrain":"domain","range":[0,1],"title":{"text":"Precision"}},"yaxis":{"constrain":"domain","range":[0,1],"scaleanchor":"x","scaleratio":1,"title":{"text":"Recall"}},"template":{"data":{"scatter":[{"type":"scatter"}]}},"annotations":[{"align":"right","showarrow":false,"text":"pr-auc-score: 0.93","x":0.15,"xanchor":"left","y":0.4,"yanchor":"top"},{"align":"right","showarrow":false,"text":"cutoff: 0.50","x":0.15,"xanchor":"left","y":0.35,"yanchor":"top"},{"align":"right","showarrow":false,"text":"precision: 0.94","x":0.15,"xanchor":"left","y":0.3,"yanchor":"top"},{"align":"right","showarrow":false,"text":"recall: 0.81","x":0.15,"xanchor":"left","y":0.25,"yanchor":"top"}],"shapes":[{"line":{"color":"lightslategray","width":1},"type":"line","x0":0,"x1":1,"xref":"x","y0":0.8145161290322581,"y1":0.8145161290322581,"yref":"y"},{"line":{"color":"lightslategray","width":1},"type":"line","x0":0.9439252336448598,"x1":0.9439252336448598,"xref":"x","y0":0,"y1":1,"yref":"y"}],"margin":{"t":40,"b":40,"l":40,"r":40}},                        {"responsive": true}                    )                };                            </script>        </div>
+</div>
+        
+</div> 
+    
+    </div>
+  </div>
+</div>
+
+</div>
+        
+</div> 
+    
+</div>
+        
+</div> 
+        </div><div>
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+
+<div class="row row-cols-2 g-4" style="margin-top: 20px;">
+    
+<div class="col">
+
+<div class="card h-100" >
+  <div class="card-header"><h3 class="card-title">Lift Curve</h3><h6 class="card-subtitle">Performance how much better than random?</h6></div>
+  <div class="card-body">
+    <div class="w-100">
+    
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+<div>                        <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-2.24.1.min.js"></script>                <div id="cb0f0a2a-bf91-4692-804c-69c27aa1c335" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script type="text/javascript">                                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("cb0f0a2a-bf91-4692-804c-69c27aa1c335")) {                    Plotly.newPlot(                        "cb0f0a2a-bf91-4692-804c-69c27aa1c335",                        [{"hoverinfo":"text","name":"perfect","text":["0%, 0%","46.27%, 100%","100, 100%"],"x":[0.0,46.26865768432617,100],"y":[0.0,100,100],"type":"scatter"},{"hoverinfo":"text","name":"model","text":["model selected 0.81% of all positives in first 0.37% sampled\u003cbr\u003eprecision=100.00% positives in sample\u003cbr\u003elift=2.16","model selected 2.42% of all positives in first 1.12% sampled\u003cbr\u003eprecision=100.00% positives in sample\u003cbr\u003elift=2.16","model selected 4.84% of all positives in first 2.24% sampled\u003cbr\u003eprecision=100.00% positives in sample\u003cbr\u003elift=2.16","model selected 7.26% of all positives in first 3.36% sampled\u003cbr\u003eprecision=100.00% positives in sample\u003cbr\u003elift=2.16","model selected 8.87% of all positives in first 4.10% sampled\u003cbr\u003eprecision=100.00% positives in sample\u003cbr\u003elift=2.16","model selected 11.29% of all positives in first 5.22% sampled\u003cbr\u003eprecision=100.00% positives in sample\u003cbr\u003elift=2.16","model selected 13.71% of all positives in first 6.34% sampled\u003cbr\u003eprecision=100.00% positives in sample\u003cbr\u003elift=2.16","model selected 15.32% of all positives in first 7.09% sampled\u003cbr\u003eprecision=100.00% positives in sample\u003cbr\u003elift=2.16","model selected 17.74% of all positives in first 8.21% sampled\u003cbr\u003eprecision=100.00% positives in sample\u003cbr\u003elift=2.16","model selected 20.16% of all positives in first 9.33% sampled\u003cbr\u003eprecision=100.00% positives in sample\u003cbr\u003elift=2.16","model selected 21.77% of all positives in first 10.07% sampled\u003cbr\u003eprecision=100.00% positives in sample\u003cbr\u003elift=2.16","model selected 24.19% of all positives in first 11.19% sampled\u003cbr\u003eprecision=100.00% positives in sample\u003cbr\u003elift=2.16","model selected 26.61% of all positives in first 12.31% sampled\u003cbr\u003eprecision=100.00% positives in sample\u003cbr\u003elift=2.16","model selected 28.23% of all positives in first 13.06% sampled\u003cbr\u003eprecision=100.00% positives in sample\u003cbr\u003elift=2.16","model selected 30.65% of all positives in first 14.18% sampled\u003cbr\u003eprecision=100.00% positives in sample\u003cbr\u003elift=2.16","model selected 33.06% of all positives in first 15.30% sampled\u003cbr\u003eprecision=100.00% positives in sample\u003cbr\u003elift=2.16","model selected 34.68% of all positives in first 16.04% sampled\u003cbr\u003eprecision=100.00% positives in sample\u003cbr\u003elift=2.16","model selected 37.10% of all positives in first 17.16% sampled\u003cbr\u003eprecision=100.00% positives in sample\u003cbr\u003elift=2.16","model selected 39.52% of all positives in first 18.28% sampled\u003cbr\u003eprecision=100.00% positives in sample\u003cbr\u003elift=2.16","model selected 41.13% of all positives in first 19.03% sampled\u003cbr\u003eprecision=100.00% positives in sample\u003cbr\u003elift=2.16","model selected 43.55% of all positives in first 20.15% sampled\u003cbr\u003eprecision=100.00% positives in sample\u003cbr\u003elift=2.16","model selected 45.97% of all positives in first 21.27% sampled\u003cbr\u003eprecision=100.00% positives in sample\u003cbr\u003elift=2.16","model selected 47.58% of all positives in first 22.01% sampled\u003cbr\u003eprecision=100.00% positives in sample\u003cbr\u003elift=2.16","model selected 50.00% of all positives in first 23.13% sampled\u003cbr\u003eprecision=100.00% positives in sample\u003cbr\u003elift=2.16","model selected 52.42% of all positives in first 24.25% sampled\u003cbr\u003eprecision=100.00% positives in sample\u003cbr\u003elift=2.16","model selected 54.84% of all positives in first 25.37% sampled\u003cbr\u003eprecision=100.00% positives in sample\u003cbr\u003elift=2.16","model selected 56.45% of all positives in first 26.12% sampled\u003cbr\u003eprecision=100.00% positives in sample\u003cbr\u003elift=2.16","model selected 58.87% of all positives in first 27.24% sampled\u003cbr\u003eprecision=100.00% positives in sample\u003cbr\u003elift=2.16","model selected 61.29% of all positives in first 28.36% sampled\u003cbr\u003eprecision=100.00% positives in sample\u003cbr\u003elift=2.16","model selected 62.90% of all positives in first 29.10% sampled\u003cbr\u003eprecision=100.00% positives in sample\u003cbr\u003elift=2.16","model selected 65.32% of all positives in first 30.22% sampled\u003cbr\u003eprecision=100.00% positives in sample\u003cbr\u003elift=2.16","model selected 67.74% of all positives in first 31.34% sampled\u003cbr\u003eprecision=100.00% positives in sample\u003cbr\u003elift=2.16","model selected 69.35% of all positives in first 32.09% sampled\u003cbr\u003eprecision=100.00% positives in sample\u003cbr\u003elift=2.16","model selected 70.97% of all positives in first 33.21% sampled\u003cbr\u003eprecision=98.88% positives in sample\u003cbr\u003elift=2.14","model selected 72.58% of all positives in first 34.33% sampled\u003cbr\u003eprecision=97.83% positives in sample\u003cbr\u003elift=2.11","model selected 74.19% of all positives in first 35.07% sampled\u003cbr\u003eprecision=97.87% positives in sample\u003cbr\u003elift=2.12","model selected 75.81% of all positives in first 36.19% sampled\u003cbr\u003eprecision=96.91% positives in sample\u003cbr\u003elift=2.09","model selected 76.61% of all positives in first 37.31% sampled\u003cbr\u003eprecision=95.00% positives in sample\u003cbr\u003elift=2.05","model selected 78.23% of all positives in first 38.06% sampled\u003cbr\u003eprecision=95.10% positives in sample\u003cbr\u003elift=2.06","model selected 79.84% of all positives in first 39.18% sampled\u003cbr\u003eprecision=94.29% positives in sample\u003cbr\u003elift=2.04","model selected 82.26% of all positives in first 40.30% sampled\u003cbr\u003eprecision=94.44% positives in sample\u003cbr\u003elift=2.04","model selected 83.06% of all positives in first 41.04% sampled\u003cbr\u003eprecision=93.64% positives in sample\u003cbr\u003elift=2.02","model selected 83.06% of all positives in first 42.16% sampled\u003cbr\u003eprecision=91.15% positives in sample\u003cbr\u003elift=1.97","model selected 83.87% of all positives in first 43.28% sampled\u003cbr\u003eprecision=89.66% positives in sample\u003cbr\u003elift=1.94","model selected 83.87% of all positives in first 44.03% sampled\u003cbr\u003eprecision=88.14% positives in sample\u003cbr\u003elift=1.90","model selected 83.87% of all positives in first 45.15% sampled\u003cbr\u003eprecision=85.95% positives in sample\u003cbr\u003elift=1.86","model selected 83.87% of all positives in first 46.27% sampled\u003cbr\u003eprecision=83.87% positives in sample\u003cbr\u003elift=1.81","model selected 83.87% of all positives in first 47.01% sampled\u003cbr\u003eprecision=82.54% positives in sample\u003cbr\u003elift=1.78","model selected 83.87% of all positives in first 48.13% sampled\u003cbr\u003eprecision=80.62% positives in sample\u003cbr\u003elift=1.74","model selected 84.68% of all positives in first 49.25% sampled\u003cbr\u003eprecision=79.55% positives in sample\u003cbr\u003elift=1.72","model selected 86.29% of all positives in first 50.37% sampled\u003cbr\u003eprecision=79.26% positives in sample\u003cbr\u003elift=1.71","model selected 86.29% of all positives in first 51.12% sampled\u003cbr\u003eprecision=78.10% positives in sample\u003cbr\u003elift=1.69","model selected 87.90% of all positives in first 52.24% sampled\u003cbr\u003eprecision=77.86% positives in sample\u003cbr\u003elift=1.68","model selected 87.90% of all positives in first 53.36% sampled\u003cbr\u003eprecision=76.22% positives in sample\u003cbr\u003elift=1.65","model selected 87.90% of all positives in first 54.10% sampled\u003cbr\u003eprecision=75.17% positives in sample\u003cbr\u003elift=1.62","model selected 87.90% of all positives in first 55.22% sampled\u003cbr\u003eprecision=73.65% positives in sample\u003cbr\u003elift=1.59","model selected 88.71% of all positives in first 56.34% sampled\u003cbr\u003eprecision=72.85% positives in sample\u003cbr\u003elift=1.57","model selected 88.71% of all positives in first 57.09% sampled\u003cbr\u003eprecision=71.90% positives in sample\u003cbr\u003elift=1.55","model selected 88.71% of all positives in first 58.21% sampled\u003cbr\u003eprecision=70.51% positives in sample\u003cbr\u003elift=1.52","model selected 89.52% of all positives in first 59.33% sampled\u003cbr\u003eprecision=69.81% positives in sample\u003cbr\u003elift=1.51","model selected 89.52% of all positives in first 60.07% sampled\u003cbr\u003eprecision=68.94% positives in sample\u003cbr\u003elift=1.49","model selected 90.32% of all positives in first 61.19% sampled\u003cbr\u003eprecision=68.29% positives in sample\u003cbr\u003elift=1.48","model selected 91.13% of all positives in first 62.31% sampled\u003cbr\u003eprecision=67.66% positives in sample\u003cbr\u003elift=1.46","model selected 91.94% of all positives in first 63.06% sampled\u003cbr\u003eprecision=67.46% positives in sample\u003cbr\u003elift=1.46","model selected 91.94% of all positives in first 64.18% sampled\u003cbr\u003eprecision=66.28% positives in sample\u003cbr\u003elift=1.43","model selected 91.94% of all positives in first 65.30% sampled\u003cbr\u003eprecision=65.14% positives in sample\u003cbr\u003elift=1.41","model selected 92.74% of all positives in first 66.04% sampled\u003cbr\u003eprecision=64.97% positives in sample\u003cbr\u003elift=1.40","model selected 92.74% of all positives in first 67.16% sampled\u003cbr\u003eprecision=63.89% positives in sample\u003cbr\u003elift=1.38","model selected 92.74% of all positives in first 68.28% sampled\u003cbr\u003eprecision=62.84% positives in sample\u003cbr\u003elift=1.36","model selected 92.74% of all positives in first 69.03% sampled\u003cbr\u003eprecision=62.16% positives in sample\u003cbr\u003elift=1.34","model selected 93.55% of all positives in first 70.15% sampled\u003cbr\u003eprecision=61.70% positives in sample\u003cbr\u003elift=1.33","model selected 94.35% of all positives in first 71.27% sampled\u003cbr\u003eprecision=61.26% positives in sample\u003cbr\u003elift=1.32","model selected 94.35% of all positives in first 72.01% sampled\u003cbr\u003eprecision=60.62% positives in sample\u003cbr\u003elift=1.31","model selected 94.35% of all positives in first 73.13% sampled\u003cbr\u003eprecision=59.69% positives in sample\u003cbr\u003elift=1.29","model selected 94.35% of all positives in first 74.25% sampled\u003cbr\u003eprecision=58.79% positives in sample\u003cbr\u003elift=1.27","model selected 95.16% of all positives in first 75.37% sampled\u003cbr\u003eprecision=58.42% positives in sample\u003cbr\u003elift=1.26","model selected 95.16% of all positives in first 76.12% sampled\u003cbr\u003eprecision=57.84% positives in sample\u003cbr\u003elift=1.25","model selected 95.16% of all positives in first 77.24% sampled\u003cbr\u003eprecision=57.00% positives in sample\u003cbr\u003elift=1.23","model selected 95.16% of all positives in first 78.36% sampled\u003cbr\u003eprecision=56.19% positives in sample\u003cbr\u003elift=1.21","model selected 95.16% of all positives in first 79.10% sampled\u003cbr\u003eprecision=55.66% positives in sample\u003cbr\u003elift=1.20","model selected 95.16% of all positives in first 80.22% sampled\u003cbr\u003eprecision=54.88% positives in sample\u003cbr\u003elift=1.19","model selected 95.16% of all positives in first 81.34% sampled\u003cbr\u003eprecision=54.13% positives in sample\u003cbr\u003elift=1.17","model selected 95.97% of all positives in first 82.09% sampled\u003cbr\u003eprecision=54.09% positives in sample\u003cbr\u003elift=1.17","model selected 95.97% of all positives in first 83.21% sampled\u003cbr\u003eprecision=53.36% positives in sample\u003cbr\u003elift=1.15","model selected 96.77% of all positives in first 84.33% sampled\u003cbr\u003eprecision=53.10% positives in sample\u003cbr\u003elift=1.15","model selected 96.77% of all positives in first 85.07% sampled\u003cbr\u003eprecision=52.63% positives in sample\u003cbr\u003elift=1.14","model selected 96.77% of all positives in first 86.19% sampled\u003cbr\u003eprecision=51.95% positives in sample\u003cbr\u003elift=1.12","model selected 97.58% of all positives in first 87.31% sampled\u003cbr\u003eprecision=51.71% positives in sample\u003cbr\u003elift=1.12","model selected 97.58% of all positives in first 88.06% sampled\u003cbr\u003eprecision=51.27% positives in sample\u003cbr\u003elift=1.11","model selected 97.58% of all positives in first 89.18% sampled\u003cbr\u003eprecision=50.63% positives in sample\u003cbr\u003elift=1.09","model selected 98.39% of all positives in first 90.30% sampled\u003cbr\u003eprecision=50.41% positives in sample\u003cbr\u003elift=1.09","model selected 98.39% of all positives in first 91.04% sampled\u003cbr\u003eprecision=50.00% positives in sample\u003cbr\u003elift=1.08","model selected 98.39% of all positives in first 92.16% sampled\u003cbr\u003eprecision=49.39% positives in sample\u003cbr\u003elift=1.07","model selected 98.39% of all positives in first 93.28% sampled\u003cbr\u003eprecision=48.80% positives in sample\u003cbr\u003elift=1.05","model selected 98.39% of all positives in first 94.03% sampled\u003cbr\u003eprecision=48.41% positives in sample\u003cbr\u003elift=1.05","model selected 98.39% of all positives in first 95.15% sampled\u003cbr\u003eprecision=47.84% positives in sample\u003cbr\u003elift=1.03","model selected 99.19% of all positives in first 96.27% sampled\u003cbr\u003eprecision=47.67% positives in sample\u003cbr\u003elift=1.03","model selected 99.19% of all positives in first 97.01% sampled\u003cbr\u003eprecision=47.31% positives in sample\u003cbr\u003elift=1.02","model selected 99.19% of all positives in first 98.13% sampled\u003cbr\u003eprecision=46.77% positives in sample\u003cbr\u003elift=1.01","model selected 100.00% of all positives in first 99.25% sampled\u003cbr\u003eprecision=46.62% positives in sample\u003cbr\u003elift=1.01"],"x":[0.3731343150138855,1.1194030046463013,2.2388060092926025,3.3582088947296143,4.104477405548096,5.223880767822266,6.343283653259277,7.089552402496338,8.208954811096191,9.32835865020752,10.074626922607422,11.194029808044434,12.313432693481445,13.059701919555664,14.179104804992676,15.298507690429688,16.044776916503906,17.1641788482666,18.28358268737793,19.029850006103516,20.149253845214844,21.26865577697754,22.014925003051758,23.134328842163086,24.25373077392578,25.37313461303711,26.119403839111328,27.238805770874023,28.35820960998535,29.104476928710938,30.223880767822266,31.34328269958496,32.08955383300781,33.208953857421875,34.3283576965332,35.07462692260742,36.19403076171875,37.31343460083008,38.05970001220703,39.17910385131836,40.29850769042969,41.044776916503906,42.164180755615234,43.2835807800293,44.029850006103516,45.149253845214844,46.26865768432617,47.01492691040039,48.13432693481445,49.25373077392578,50.37313461303711,51.11940383911133,52.238807678222656,53.35820770263672,54.10447692871094,55.223880767822266,56.343284606933594,57.08955383300781,58.208953857421875,59.3283576965332,60.07462692260742,61.19403076171875,62.31343460083008,63.05970001220703,64.17910766601562,65.29850769042969,66.0447769165039,67.16417694091797,68.28358459472656,69.02985382080078,70.14925384521484,71.2686538696289,72.01492309570312,73.13433074951172,74.25373077392578,75.37313079833984,76.11940002441406,77.23880767822266,78.35820770263672,79.10447692871094,80.223876953125,81.3432846069336,82.08955383300781,83.20895385742188,84.32836151123047,85.07462310791016,86.19403076171875,87.31343078613281,88.05970001220703,89.17910766601562,90.29850769042969,91.0447769165039,92.16417694091797,93.28358459472656,94.02985382080078,95.14925384521484,96.2686538696289,97.01492309570312,98.13433074951172,99.25373077392578],"y":[0.8100000023841858,2.4200000762939453,4.840000152587891,7.260000228881836,8.869999885559082,11.289999961853027,13.710000038146973,15.319999694824219,17.739999771118164,20.15999984741211,21.770000457763672,24.190000534057617,26.610000610351562,28.229999542236328,30.649999618530273,33.060001373291016,34.68000030517578,37.099998474121094,39.52000045776367,41.130001068115234,43.54999923706055,45.970001220703125,47.58000183105469,50.0,52.41999816894531,54.84000015258789,56.45000076293945,58.869998931884766,61.290000915527344,62.900001525878906,65.31999969482422,67.73999786376953,69.3499984741211,70.97000122070312,72.58000183105469,74.19000244140625,75.80999755859375,76.61000061035156,78.2300033569336,79.83999633789062,82.26000213623047,83.05999755859375,83.05999755859375,83.87000274658203,83.87000274658203,83.87000274658203,83.87000274658203,83.87000274658203,83.87000274658203,84.68000030517578,86.29000091552734,86.29000091552734,87.9000015258789,87.9000015258789,87.9000015258789,87.9000015258789,88.70999908447266,88.70999908447266,88.70999908447266,89.5199966430664,89.5199966430664,90.31999969482422,91.12999725341797,91.94000244140625,91.94000244140625,91.94000244140625,92.73999786376953,92.73999786376953,92.73999786376953,92.73999786376953,93.55000305175781,94.3499984741211,94.3499984741211,94.3499984741211,94.3499984741211,95.16000366210938,95.16000366210938,95.16000366210938,95.16000366210938,95.16000366210938,95.16000366210938,95.16000366210938,95.97000122070312,95.97000122070312,96.7699966430664,96.7699966430664,96.7699966430664,97.58000183105469,97.58000183105469,97.58000183105469,98.38999938964844,98.38999938964844,98.38999938964844,98.38999938964844,98.38999938964844,98.38999938964844,99.19000244140625,99.19000244140625,99.19000244140625,100.0],"type":"scatter"},{"hoverinfo":"text","name":"random","text":["random selected 0.37% of all positives in first 0.37% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 1.12% of all positives in first 1.12% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 2.24% of all positives in first 2.24% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 3.36% of all positives in first 3.36% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 4.10% of all positives in first 4.10% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 5.22% of all positives in first 5.22% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 6.34% of all positives in first 6.34% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 7.09% of all positives in first 7.09% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 8.21% of all positives in first 8.21% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 9.33% of all positives in first 9.33% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 10.07% of all positives in first 10.07% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 11.19% of all positives in first 11.19% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 12.31% of all positives in first 12.31% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 13.06% of all positives in first 13.06% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 14.18% of all positives in first 14.18% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 15.30% of all positives in first 15.30% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 16.04% of all positives in first 16.04% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 17.16% of all positives in first 17.16% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 18.28% of all positives in first 18.28% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 19.03% of all positives in first 19.03% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 20.15% of all positives in first 20.15% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 21.27% of all positives in first 21.27% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 22.01% of all positives in first 22.01% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 23.13% of all positives in first 23.13% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 24.25% of all positives in first 24.25% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 25.37% of all positives in first 25.37% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 26.12% of all positives in first 26.12% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 27.24% of all positives in first 27.24% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 28.36% of all positives in first 28.36% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 29.10% of all positives in first 29.10% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 30.22% of all positives in first 30.22% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 31.34% of all positives in first 31.34% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 32.09% of all positives in first 32.09% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 33.21% of all positives in first 33.21% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 34.33% of all positives in first 34.33% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 35.07% of all positives in first 35.07% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 36.19% of all positives in first 36.19% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 37.31% of all positives in first 37.31% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 38.06% of all positives in first 38.06% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 39.18% of all positives in first 39.18% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 40.30% of all positives in first 40.30% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 41.04% of all positives in first 41.04% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 42.16% of all positives in first 42.16% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 43.28% of all positives in first 43.28% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 44.03% of all positives in first 44.03% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 45.15% of all positives in first 45.15% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 46.27% of all positives in first 46.27% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 47.01% of all positives in first 47.01% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 48.13% of all positives in first 48.13% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 49.25% of all positives in first 49.25% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 50.37% of all positives in first 50.37% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 51.12% of all positives in first 51.12% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 52.24% of all positives in first 52.24% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 53.36% of all positives in first 53.36% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 54.10% of all positives in first 54.10% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 55.22% of all positives in first 55.22% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 56.34% of all positives in first 56.34% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 57.09% of all positives in first 57.09% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 58.21% of all positives in first 58.21% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 59.33% of all positives in first 59.33% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 60.07% of all positives in first 60.07% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 61.19% of all positives in first 61.19% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 62.31% of all positives in first 62.31% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 63.06% of all positives in first 63.06% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 64.18% of all positives in first 64.18% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 65.30% of all positives in first 65.30% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 66.04% of all positives in first 66.04% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 67.16% of all positives in first 67.16% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 68.28% of all positives in first 68.28% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 69.03% of all positives in first 69.03% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 70.15% of all positives in first 70.15% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 71.27% of all positives in first 71.27% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 72.01% of all positives in first 72.01% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 73.13% of all positives in first 73.13% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 74.25% of all positives in first 74.25% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 75.37% of all positives in first 75.37% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 76.12% of all positives in first 76.12% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 77.24% of all positives in first 77.24% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 78.36% of all positives in first 78.36% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 79.10% of all positives in first 79.10% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 80.22% of all positives in first 80.22% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 81.34% of all positives in first 81.34% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 82.09% of all positives in first 82.09% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 83.21% of all positives in first 83.21% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 84.33% of all positives in first 84.33% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 85.07% of all positives in first 85.07% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 86.19% of all positives in first 86.19% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 87.31% of all positives in first 87.31% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 88.06% of all positives in first 88.06% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 89.18% of all positives in first 89.18% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 90.30% of all positives in first 90.30% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 91.04% of all positives in first 91.04% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 92.16% of all positives in first 92.16% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 93.28% of all positives in first 93.28% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 94.03% of all positives in first 94.03% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 95.15% of all positives in first 95.15% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 96.27% of all positives in first 96.27% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 97.01% of all positives in first 97.01% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 98.13% of all positives in first 98.13% sampled\u003cbr\u003eprecision=46.27% positives in sample","random selected 99.25% of all positives in first 99.25% sampled\u003cbr\u003eprecision=46.27% positives in sample"],"x":[0.3731343150138855,1.1194030046463013,2.2388060092926025,3.3582088947296143,4.104477405548096,5.223880767822266,6.343283653259277,7.089552402496338,8.208954811096191,9.32835865020752,10.074626922607422,11.194029808044434,12.313432693481445,13.059701919555664,14.179104804992676,15.298507690429688,16.044776916503906,17.1641788482666,18.28358268737793,19.029850006103516,20.149253845214844,21.26865577697754,22.014925003051758,23.134328842163086,24.25373077392578,25.37313461303711,26.119403839111328,27.238805770874023,28.35820960998535,29.104476928710938,30.223880767822266,31.34328269958496,32.08955383300781,33.208953857421875,34.3283576965332,35.07462692260742,36.19403076171875,37.31343460083008,38.05970001220703,39.17910385131836,40.29850769042969,41.044776916503906,42.164180755615234,43.2835807800293,44.029850006103516,45.149253845214844,46.26865768432617,47.01492691040039,48.13432693481445,49.25373077392578,50.37313461303711,51.11940383911133,52.238807678222656,53.35820770263672,54.10447692871094,55.223880767822266,56.343284606933594,57.08955383300781,58.208953857421875,59.3283576965332,60.07462692260742,61.19403076171875,62.31343460083008,63.05970001220703,64.17910766601562,65.29850769042969,66.0447769165039,67.16417694091797,68.28358459472656,69.02985382080078,70.14925384521484,71.2686538696289,72.01492309570312,73.13433074951172,74.25373077392578,75.37313079833984,76.11940002441406,77.23880767822266,78.35820770263672,79.10447692871094,80.223876953125,81.3432846069336,82.08955383300781,83.20895385742188,84.32836151123047,85.07462310791016,86.19403076171875,87.31343078613281,88.05970001220703,89.17910766601562,90.29850769042969,91.0447769165039,92.16417694091797,93.28358459472656,94.02985382080078,95.14925384521484,96.2686538696289,97.01492309570312,98.13433074951172,99.25373077392578],"y":[0.3700000047683716,1.1200000047683716,2.240000009536743,3.359999895095825,4.099999904632568,5.21999979019165,6.340000152587891,7.090000152587891,8.210000038146973,9.329999923706055,10.069999694824219,11.1899995803833,12.3100004196167,13.0600004196167,14.180000305175781,15.300000190734863,16.040000915527344,17.15999984741211,18.280000686645508,19.030000686645508,20.149999618530273,21.270000457763672,22.010000228881836,23.1299991607666,24.25,25.3700008392334,26.1200008392334,27.239999771118164,28.360000610351562,29.100000381469727,30.219999313354492,31.34000015258789,32.09000015258789,33.209999084472656,34.33000183105469,35.06999969482422,36.189998626708984,37.310001373291016,38.060001373291016,39.18000030517578,40.29999923706055,41.040000915527344,42.15999984741211,43.279998779296875,44.029998779296875,45.150001525878906,46.27000045776367,47.0099983215332,48.130001068115234,49.25,50.369998931884766,51.119998931884766,52.2400016784668,53.36000061035156,54.099998474121094,55.220001220703125,56.34000015258789,57.09000015258789,58.209999084472656,59.33000183105469,60.06999969482422,61.189998626708984,62.310001373291016,63.060001373291016,64.18000030517578,65.30000305175781,66.04000091552734,67.16000366210938,68.27999877929688,69.02999877929688,70.1500015258789,71.2699966430664,72.01000213623047,73.12999725341797,74.25,75.37000274658203,76.12000274658203,77.23999786376953,78.36000061035156,79.0999984741211,80.22000122070312,81.33999633789062,82.08999633789062,83.20999908447266,84.33000183105469,85.06999969482422,86.19000244140625,87.30999755859375,88.05999755859375,89.18000030517578,90.30000305175781,91.04000091552734,92.16000366210938,93.27999877929688,94.02999877929688,95.1500015258789,96.2699966430664,97.01000213623047,98.12999725341797,99.25],"type":"scatter"}],                        {"template":{"data":{"scatter":[{"type":"scatter"}]}},"title":{"font":{"size":18},"text":"Lift curve","x":0.5},"xaxis":{"title":{"text":"Percentage sampled"},"spikemode":"across","range":[0,100]},"yaxis":{"title":{"text":"Percentage of positive"}},"hovermode":"x","plot_bgcolor":"#fff","legend":{"xanchor":"center","y":0.9,"x":0.1},"shapes":[{"type":"line","x0":39.17910385131836,"x1":39.17910385131836,"xref":"x","y0":0,"y1":100.0,"yref":"y"}],"annotations":[{"text":"cutoff=0.50","x":39.17910385131836,"y":5,"yref":"y"},{"align":"right","showarrow":false,"text":"Model: 99 out 105 (94.29%)","x":0.5,"xanchor":"left","xref":"paper","y":0.4,"yanchor":"top","yref":"paper"},{"align":"right","showarrow":false,"text":"Random: 48 out 105 (46.27%)","x":0.5,"xanchor":"left","xref":"paper","y":0.33,"yanchor":"top","yref":"paper"},{"align":"right","showarrow":false,"text":"Lift: 2.0","x":0.5,"xanchor":"left","xref":"paper","y":0.26,"yanchor":"top","yref":"paper"}],"margin":{"t":40,"b":40,"l":40,"r":40}},                        {"responsive": true}                    )                };                            </script>        </div>
+</div>
+        
+</div> 
+    
+    </div>
+  </div>
+</div>
+
+</div>
+        
+<div class="col">
+
+<div class="card h-100" >
+  <div class="card-header"><h3 class="card-title">Cumulative Precision</h3><h6 class="card-subtitle">Expected distribution for highest scores</h6></div>
+  <div class="card-body">
+    <div class="w-100">
+    
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+<div>                        <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-2.24.1.min.js"></script>                <div id="34adaaa2-26a1-40b1-b959-2451bdaca4a4" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script type="text/javascript">                                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("34adaaa2-26a1-40b1-b959-2451bdaca4a4")) {                    Plotly.newPlot(                        "34adaaa2-26a1-40b1-b959-2451bdaca4a4",                        [{"hoverinfo":"text","showlegend":false,"text":["percentage sampled = top 0.37%","percentage sampled = top 1.12%","percentage sampled = top 2.24%","percentage sampled = top 3.36%","percentage sampled = top 4.10%","percentage sampled = top 5.22%","percentage sampled = top 6.34%","percentage sampled = top 7.09%","percentage sampled = top 8.21%","percentage sampled = top 9.33%","percentage sampled = top 10.07%","percentage sampled = top 11.19%","percentage sampled = top 12.31%","percentage sampled = top 13.06%","percentage sampled = top 14.18%","percentage sampled = top 15.30%","percentage sampled = top 16.04%","percentage sampled = top 17.16%","percentage sampled = top 18.28%","percentage sampled = top 19.03%","percentage sampled = top 20.15%","percentage sampled = top 21.27%","percentage sampled = top 22.01%","percentage sampled = top 23.13%","percentage sampled = top 24.25%","percentage sampled = top 25.37%","percentage sampled = top 26.12%","percentage sampled = top 27.24%","percentage sampled = top 28.36%","percentage sampled = top 29.10%","percentage sampled = top 30.22%","percentage sampled = top 31.34%","percentage sampled = top 32.09%","percentage sampled = top 33.21%","percentage sampled = top 34.33%","percentage sampled = top 35.07%","percentage sampled = top 36.19%","percentage sampled = top 37.31%","percentage sampled = top 38.06%","percentage sampled = top 39.18%","percentage sampled = top 40.30%","percentage sampled = top 41.04%","percentage sampled = top 42.16%","percentage sampled = top 43.28%","percentage sampled = top 44.03%","percentage sampled = top 45.15%","percentage sampled = top 46.27%","percentage sampled = top 47.01%","percentage sampled = top 48.13%","percentage sampled = top 49.25%","percentage sampled = top 50.37%","percentage sampled = top 51.12%","percentage sampled = top 52.24%","percentage sampled = top 53.36%","percentage sampled = top 54.10%","percentage sampled = top 55.22%","percentage sampled = top 56.34%","percentage sampled = top 57.09%","percentage sampled = top 58.21%","percentage sampled = top 59.33%","percentage sampled = top 60.07%","percentage sampled = top 61.19%","percentage sampled = top 62.31%","percentage sampled = top 63.06%","percentage sampled = top 64.18%","percentage sampled = top 65.30%","percentage sampled = top 66.04%","percentage sampled = top 67.16%","percentage sampled = top 68.28%","percentage sampled = top 69.03%","percentage sampled = top 70.15%","percentage sampled = top 71.27%","percentage sampled = top 72.01%","percentage sampled = top 73.13%","percentage sampled = top 74.25%","percentage sampled = top 75.37%","percentage sampled = top 76.12%","percentage sampled = top 77.24%","percentage sampled = top 78.36%","percentage sampled = top 79.10%","percentage sampled = top 80.22%","percentage sampled = top 81.34%","percentage sampled = top 82.09%","percentage sampled = top 83.21%","percentage sampled = top 84.33%","percentage sampled = top 85.07%","percentage sampled = top 86.19%","percentage sampled = top 87.31%","percentage sampled = top 88.06%","percentage sampled = top 89.18%","percentage sampled = top 90.30%","percentage sampled = top 91.04%","percentage sampled = top 92.16%","percentage sampled = top 93.28%","percentage sampled = top 94.03%","percentage sampled = top 95.15%","percentage sampled = top 96.27%","percentage sampled = top 97.01%","percentage sampled = top 98.13%","percentage sampled = top 99.25%"],"x":[0.3731343150138855,1.1194030046463013,2.2388060092926025,3.3582088947296143,4.104477405548096,5.223880767822266,6.343283653259277,7.089552402496338,8.208954811096191,9.32835865020752,10.074626922607422,11.194029808044434,12.313432693481445,13.059701919555664,14.179104804992676,15.298507690429688,16.044776916503906,17.1641788482666,18.28358268737793,19.029850006103516,20.149253845214844,21.26865577697754,22.014925003051758,23.134328842163086,24.25373077392578,25.37313461303711,26.119403839111328,27.238805770874023,28.35820960998535,29.104476928710938,30.223880767822266,31.34328269958496,32.08955383300781,33.208953857421875,34.3283576965332,35.07462692260742,36.19403076171875,37.31343460083008,38.05970001220703,39.17910385131836,40.29850769042969,41.044776916503906,42.164180755615234,43.2835807800293,44.029850006103516,45.149253845214844,46.26865768432617,47.01492691040039,48.13432693481445,49.25373077392578,50.37313461303711,51.11940383911133,52.238807678222656,53.35820770263672,54.10447692871094,55.223880767822266,56.343284606933594,57.08955383300781,58.208953857421875,59.3283576965332,60.07462692260742,61.19403076171875,62.31343460083008,63.05970001220703,64.17910766601562,65.29850769042969,66.0447769165039,67.16417694091797,68.28358459472656,69.02985382080078,70.14925384521484,71.2686538696289,72.01492309570312,73.13433074951172,74.25373077392578,75.37313079833984,76.11940002441406,77.23880767822266,78.35820770263672,79.10447692871094,80.223876953125,81.3432846069336,82.08955383300781,83.20895385742188,84.32836151123047,85.07462310791016,86.19403076171875,87.31343078613281,88.05970001220703,89.17910766601562,90.29850769042969,91.0447769165039,92.16417694091797,93.28358459472656,94.02985382080078,95.14925384521484,96.2686538696289,97.01492309570312,98.13433074951172,99.25373077392578],"y":[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],"type":"scatter"},{"fill":"tozeroy","hoverinfo":"text","name":"1","text":["percentage 1=100.00%","percentage 1=100.00%","percentage 1=100.00%","percentage 1=100.00%","percentage 1=100.00%","percentage 1=100.00%","percentage 1=100.00%","percentage 1=100.00%","percentage 1=100.00%","percentage 1=100.00%","percentage 1=100.00%","percentage 1=100.00%","percentage 1=100.00%","percentage 1=100.00%","percentage 1=100.00%","percentage 1=100.00%","percentage 1=100.00%","percentage 1=100.00%","percentage 1=100.00%","percentage 1=100.00%","percentage 1=100.00%","percentage 1=100.00%","percentage 1=100.00%","percentage 1=100.00%","percentage 1=100.00%","percentage 1=100.00%","percentage 1=100.00%","percentage 1=100.00%","percentage 1=100.00%","percentage 1=100.00%","percentage 1=100.00%","percentage 1=100.00%","percentage 1=100.00%","percentage 1=98.88%","percentage 1=97.83%","percentage 1=97.87%","percentage 1=96.91%","percentage 1=95.00%","percentage 1=95.10%","percentage 1=94.29%","percentage 1=94.44%","percentage 1=93.64%","percentage 1=91.15%","percentage 1=89.66%","percentage 1=88.14%","percentage 1=85.95%","percentage 1=83.87%","percentage 1=82.54%","percentage 1=80.62%","percentage 1=79.55%","percentage 1=79.26%","percentage 1=78.10%","percentage 1=77.86%","percentage 1=76.22%","percentage 1=75.17%","percentage 1=73.65%","percentage 1=72.85%","percentage 1=71.90%","percentage 1=70.51%","percentage 1=69.81%","percentage 1=68.94%","percentage 1=68.29%","percentage 1=67.66%","percentage 1=67.46%","percentage 1=66.28%","percentage 1=65.14%","percentage 1=64.97%","percentage 1=63.89%","percentage 1=62.84%","percentage 1=62.16%","percentage 1=61.70%","percentage 1=61.26%","percentage 1=60.62%","percentage 1=59.69%","percentage 1=58.79%","percentage 1=58.42%","percentage 1=57.84%","percentage 1=57.00%","percentage 1=56.19%","percentage 1=55.66%","percentage 1=54.88%","percentage 1=54.13%","percentage 1=54.09%","percentage 1=53.36%","percentage 1=53.10%","percentage 1=52.63%","percentage 1=51.95%","percentage 1=51.71%","percentage 1=51.27%","percentage 1=50.63%","percentage 1=50.41%","percentage 1=50.00%","percentage 1=49.39%","percentage 1=48.80%","percentage 1=48.41%","percentage 1=47.84%","percentage 1=47.67%","percentage 1=47.31%","percentage 1=46.77%","percentage 1=46.62%"],"x":[0.3731343150138855,1.1194030046463013,2.2388060092926025,3.3582088947296143,4.104477405548096,5.223880767822266,6.343283653259277,7.089552402496338,8.208954811096191,9.32835865020752,10.074626922607422,11.194029808044434,12.313432693481445,13.059701919555664,14.179104804992676,15.298507690429688,16.044776916503906,17.1641788482666,18.28358268737793,19.029850006103516,20.149253845214844,21.26865577697754,22.014925003051758,23.134328842163086,24.25373077392578,25.37313461303711,26.119403839111328,27.238805770874023,28.35820960998535,29.104476928710938,30.223880767822266,31.34328269958496,32.08955383300781,33.208953857421875,34.3283576965332,35.07462692260742,36.19403076171875,37.31343460083008,38.05970001220703,39.17910385131836,40.29850769042969,41.044776916503906,42.164180755615234,43.2835807800293,44.029850006103516,45.149253845214844,46.26865768432617,47.01492691040039,48.13432693481445,49.25373077392578,50.37313461303711,51.11940383911133,52.238807678222656,53.35820770263672,54.10447692871094,55.223880767822266,56.343284606933594,57.08955383300781,58.208953857421875,59.3283576965332,60.07462692260742,61.19403076171875,62.31343460083008,63.05970001220703,64.17910766601562,65.29850769042969,66.0447769165039,67.16417694091797,68.28358459472656,69.02985382080078,70.14925384521484,71.2686538696289,72.01492309570312,73.13433074951172,74.25373077392578,75.37313079833984,76.11940002441406,77.23880767822266,78.35820770263672,79.10447692871094,80.223876953125,81.3432846069336,82.08955383300781,83.20895385742188,84.32836151123047,85.07462310791016,86.19403076171875,87.31343078613281,88.05970001220703,89.17910766601562,90.29850769042969,91.0447769165039,92.16417694091797,93.28358459472656,94.02985382080078,95.14925384521484,96.2686538696289,97.01492309570312,98.13433074951172,99.25373077392578],"y":[100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,98.87640449438203,97.82608695652173,97.87234042553192,96.90721649484536,95.0,95.09803921568627,94.28571428571429,94.44444444444444,93.63636363636364,91.15044247787611,89.65517241379311,88.13559322033899,85.9504132231405,83.87096774193549,82.53968253968254,80.62015503875969,79.54545454545455,79.25925925925925,78.10218978102189,77.85714285714286,76.22377622377623,75.17241379310344,73.64864864864865,72.8476821192053,71.89542483660131,70.51282051282051,69.81132075471699,68.94409937888199,68.29268292682927,67.66467065868264,67.45562130177515,66.27906976744185,65.14285714285714,64.97175141242938,63.888888888888886,62.84153005464481,62.16216216216216,61.702127659574465,61.2565445026178,60.62176165803109,59.69387755102041,58.79396984924623,58.415841584158414,57.84313725490196,57.00483091787439,56.19047619047619,55.660377358490564,54.883720930232556,54.12844036697248,54.09090909090909,53.36322869955157,53.097345132743364,52.63157894736842,51.94805194805195,51.70940170940171,51.271186440677965,50.62761506276151,50.413223140495866,50.0,49.392712550607285,48.8,48.41269841269841,47.84313725490196,47.674418604651166,47.30769230769231,46.7680608365019,46.61654135338346],"type":"scatter"},{"fill":"tonexty","hoverinfo":"text","name":"0","text":["percentage 0=0.00%","percentage 0=0.00%","percentage 0=0.00%","percentage 0=0.00%","percentage 0=0.00%","percentage 0=0.00%","percentage 0=0.00%","percentage 0=0.00%","percentage 0=0.00%","percentage 0=0.00%","percentage 0=0.00%","percentage 0=0.00%","percentage 0=0.00%","percentage 0=0.00%","percentage 0=0.00%","percentage 0=0.00%","percentage 0=0.00%","percentage 0=0.00%","percentage 0=0.00%","percentage 0=0.00%","percentage 0=0.00%","percentage 0=0.00%","percentage 0=0.00%","percentage 0=0.00%","percentage 0=0.00%","percentage 0=0.00%","percentage 0=0.00%","percentage 0=0.00%","percentage 0=0.00%","percentage 0=0.00%","percentage 0=0.00%","percentage 0=0.00%","percentage 0=0.00%","percentage 0=1.12%","percentage 0=2.17%","percentage 0=2.13%","percentage 0=3.09%","percentage 0=5.00%","percentage 0=4.90%","percentage 0=5.71%","percentage 0=5.56%","percentage 0=6.36%","percentage 0=8.85%","percentage 0=10.34%","percentage 0=11.86%","percentage 0=14.05%","percentage 0=16.13%","percentage 0=17.46%","percentage 0=19.38%","percentage 0=20.45%","percentage 0=20.74%","percentage 0=21.90%","percentage 0=22.14%","percentage 0=23.78%","percentage 0=24.83%","percentage 0=26.35%","percentage 0=27.15%","percentage 0=28.10%","percentage 0=29.49%","percentage 0=30.19%","percentage 0=31.06%","percentage 0=31.71%","percentage 0=32.34%","percentage 0=32.54%","percentage 0=33.72%","percentage 0=34.86%","percentage 0=35.03%","percentage 0=36.11%","percentage 0=37.16%","percentage 0=37.84%","percentage 0=38.30%","percentage 0=38.74%","percentage 0=39.38%","percentage 0=40.31%","percentage 0=41.21%","percentage 0=41.58%","percentage 0=42.16%","percentage 0=43.00%","percentage 0=43.81%","percentage 0=44.34%","percentage 0=45.12%","percentage 0=45.87%","percentage 0=45.91%","percentage 0=46.64%","percentage 0=46.90%","percentage 0=47.37%","percentage 0=48.05%","percentage 0=48.29%","percentage 0=48.73%","percentage 0=49.37%","percentage 0=49.59%","percentage 0=50.00%","percentage 0=50.61%","percentage 0=51.20%","percentage 0=51.59%","percentage 0=52.16%","percentage 0=52.33%","percentage 0=52.69%","percentage 0=53.23%","percentage 0=53.38%"],"x":[0.3731343150138855,1.1194030046463013,2.2388060092926025,3.3582088947296143,4.104477405548096,5.223880767822266,6.343283653259277,7.089552402496338,8.208954811096191,9.32835865020752,10.074626922607422,11.194029808044434,12.313432693481445,13.059701919555664,14.179104804992676,15.298507690429688,16.044776916503906,17.1641788482666,18.28358268737793,19.029850006103516,20.149253845214844,21.26865577697754,22.014925003051758,23.134328842163086,24.25373077392578,25.37313461303711,26.119403839111328,27.238805770874023,28.35820960998535,29.104476928710938,30.223880767822266,31.34328269958496,32.08955383300781,33.208953857421875,34.3283576965332,35.07462692260742,36.19403076171875,37.31343460083008,38.05970001220703,39.17910385131836,40.29850769042969,41.044776916503906,42.164180755615234,43.2835807800293,44.029850006103516,45.149253845214844,46.26865768432617,47.01492691040039,48.13432693481445,49.25373077392578,50.37313461303711,51.11940383911133,52.238807678222656,53.35820770263672,54.10447692871094,55.223880767822266,56.343284606933594,57.08955383300781,58.208953857421875,59.3283576965332,60.07462692260742,61.19403076171875,62.31343460083008,63.05970001220703,64.17910766601562,65.29850769042969,66.0447769165039,67.16417694091797,68.28358459472656,69.02985382080078,70.14925384521484,71.2686538696289,72.01492309570312,73.13433074951172,74.25373077392578,75.37313079833984,76.11940002441406,77.23880767822266,78.35820770263672,79.10447692871094,80.223876953125,81.3432846069336,82.08955383300781,83.20895385742188,84.32836151123047,85.07462310791016,86.19403076171875,87.31343078613281,88.05970001220703,89.17910766601562,90.29850769042969,91.0447769165039,92.16417694091797,93.28358459472656,94.02985382080078,95.14925384521484,96.2686538696289,97.01492309570312,98.13433074951172,99.25373077392578],"y":[100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0],"type":"scatter"}],                        {"template":{"data":{"scatter":[{"type":"scatter"}]}},"title":{"font":{"size":18},"text":"Cumulative percentage per category\u003cbr\u003ewhen sampling top X%","x":0.5},"xaxis":{"title":{"text":"Top X% model scores"},"spikemode":"across","range":[0,100],"nticks":10},"yaxis":{"title":{"text":"Cumulative precision per category"}},"hovermode":"x","plot_bgcolor":"#fff","margin":{"t":40,"b":40,"l":40,"r":40}},                        {"responsive": true}                    )                };                            </script>        </div>
+</div>
+        
+</div> 
+    
+    </div>
+  </div>
+</div>
+
+</div>
+        
+</div> 
+    
+</div>
+        
+</div> 
+    
+    </div>
+</div>
+    
+</div>
+
+<div class="tab-pane " id="myTab2"
+     role="tabpanel" aria-labelledby="myTab2-tab"> <div><H1>Individual Predictions</H1></div>
+<div>
+    <div>
+    
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+
+<div class="row row-cols-2 g-4" style="margin-top: 20px;">
+    
+<div class="col">
+
+<div class="card h-100" >
+  <div class="card-header"><h3 class="card-title">Select Random Index</h3></div>
+  <div class="card-body">
+    <div class="w-100">
+    
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+Selected index: <b>None</b>
+</div>
+        
+</div> 
+    
+    </div>
+  </div>
+</div>
+
+</div>
+        
+<div class="col">
+
+<div class="card h-100" >
+  <div class="card-header"><h3 class="card-title">Prediction</h3></div>
+  <div class="card-body">
+    <div class="w-100">
+    
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+no index selected
+</div>
+        
+</div> 
+    
+    </div>
+  </div>
+</div>
+
+</div>
+        
+</div> 
+    
+</div>
+        
+</div> 
+        </div><div>
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+
+<div class="row row-cols-2 g-4" style="margin-top: 20px;">
+    
+<div class="col">
+
+<div class="card h-100" >
+  <div class="card-header"><h3 class="card-title">Contributions Plot</h3><h6 class="card-subtitle">How has each feature contributed to the prediction?</h6></div>
+  <div class="card-body">
+    <div class="w-100">
+    
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+<div>no index selected</div>
+</div>
+        
+</div> 
+    
+    </div>
+  </div>
+</div>
+
+</div>
+        
+<div class="col">
+
+<div class="card h-100" >
+  <div class="card-header"><h3 class="card-title">Partial Dependence Plot</h3></div>
+  <div class="card-body">
+    <div class="w-100">
+    
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+<div>                        <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-2.24.1.min.js"></script>                <div id="66f32bcc-4a4a-4ede-af04-f0b9d16d77e2" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script type="text/javascript">                                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("66f32bcc-4a4a-4ede-af04-f0b9d16d77e2")) {                    Plotly.newPlot(                        "66f32bcc-4a4a-4ede-af04-f0b9d16d77e2",                        [{"line":{"color":"grey","width":4},"mode":"lines+markers","name":"average prediction \u003cbr\u003efor different values of \u003cbr\u003escaling__age","x":[0.0,0.043478260869565244,0.19565217391304346,0.32608695652173914,0.4565217391304348,0.6086956521739131,0.6956521739130435,0.7826086956521738,0.8695652173913044,1.0],"y":[32.82,31.77,32.89,29.75,28.74,34.2,41.21,57.22,78.45,88.44],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[0.0,0.043478260869565244,0.19565217391304346,0.32608695652173914,0.4565217391304348,0.6086956521739131,0.6956521739130435,0.7826086956521738,0.8695652173913044,1.0],"y":[100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[0.0,0.043478260869565244,0.19565217391304346,0.32608695652173914,0.4565217391304348,0.6086956521739131,0.6956521739130435,0.7826086956521738,0.8695652173913044,1.0],"y":[0.8772252357300762,0.0,0.0,13.697169148801954,33.0066385531151,36.87492103888102,23.575824524753664,25.592923109297917,66.50249187469338,81.11817912655536],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[0.0,0.043478260869565244,0.19565217391304346,0.32608695652173914,0.4565217391304348,0.6086956521739131,0.6956521739130435,0.7826086956521738,0.8695652173913044,1.0],"y":[0.0,0.0,10.06241069282041,18.248545083681556,11.973933364067431,0.0,7.230815884110455,16.649202954618044,81.8118369668584,94.48873423881561],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[0.0,0.043478260869565244,0.19565217391304346,0.32608695652173914,0.4565217391304348,0.6086956521739131,0.6956521739130435,0.7826086956521738,0.8695652173913044,1.0],"y":[51.10269714693769,57.89493465841562,21.418718284203077,6.7854229321154484,0.0,22.903885600374352,31.892556013864127,67.77665769447346,81.99283544893174,91.34304545567305],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[0.0,0.043478260869565244,0.19565217391304346,0.32608695652173914,0.4565217391304348,0.6086956521739131,0.6956521739130435,0.7826086956521738,0.8695652173913044,1.0],"y":[12.389405934718383,12.899197325357804,17.581843053166605,24.264616777336006,18.959423686940337,8.602577184401582,16.341501593339935,19.92243396955315,31.943519332816102,34.491720013151884],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[0.0,0.043478260869565244,0.19565217391304346,0.32608695652173914,0.4565217391304348,0.6086956521739131,0.6956521739130435,0.7826086956521738,0.8695652173913044,1.0],"y":[0.0,8.36519407066694,19.440386850201936,14.837426163842505,12.876119487478451,27.88564998774039,38.59172510422029,56.958211238790405,78.71437774028264,93.93203623432001],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[0.0,0.043478260869565244,0.19565217391304346,0.32608695652173914,0.4565217391304348,0.6086956521739131,0.6956521739130435,0.7826086956521738,0.8695652173913044,1.0],"y":[100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[0.0,0.043478260869565244,0.19565217391304346,0.32608695652173914,0.4565217391304348,0.6086956521739131,0.6956521739130435,0.7826086956521738,0.8695652173913044,1.0],"y":[100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[0.0,0.043478260869565244,0.19565217391304346,0.32608695652173914,0.4565217391304348,0.6086956521739131,0.6956521739130435,0.7826086956521738,0.8695652173913044,1.0],"y":[0.0,0.0,6.189563871217425,16.669136846682374,8.249229039595637,0.0,0.0,8.075809245673764,37.345874432561985,73.9114507432331],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[0.0,0.043478260869565244,0.19565217391304346,0.32608695652173914,0.4565217391304348,0.6086956521739131,0.6956521739130435,0.7826086956521738,0.8695652173913044,1.0],"y":[100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[0.0,0.043478260869565244,0.19565217391304346,0.32608695652173914,0.4565217391304348,0.6086956521739131,0.6956521739130435,0.7826086956521738,0.8695652173913044,1.0],"y":[0.0,0.0,10.539542302688606,24.57318028637257,0.0,0.0,5.82180565640969,12.683608089886247,71.30978252454815,100.0],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[0.0,0.043478260869565244,0.19565217391304346,0.32608695652173914,0.4565217391304348,0.6086956521739131,0.6956521739130435,0.7826086956521738,0.8695652173913044,1.0],"y":[100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[0.0,0.043478260869565244,0.19565217391304346,0.32608695652173914,0.4565217391304348,0.6086956521739131,0.6956521739130435,0.7826086956521738,0.8695652173913044,1.0],"y":[9.147873989609023,0.0,0.0,0.0,12.269051703869541,21.672998978033878,31.031534738906107,45.228567035853295,64.9717285589744,100.0],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[0.0,0.043478260869565244,0.19565217391304346,0.32608695652173914,0.4565217391304348,0.6086956521739131,0.6956521739130435,0.7826086956521738,0.8695652173913044,1.0],"y":[100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[0.0,0.043478260869565244,0.19565217391304346,0.32608695652173914,0.4565217391304348,0.6086956521739131,0.6956521739130435,0.7826086956521738,0.8695652173913044,1.0],"y":[11.571649530717666,24.29872853450669,37.145379151806765,53.92592107134433,53.654906795123615,36.042112053597926,59.008267209580154,63.334643190298124,100.0,100.0],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[0.0,0.043478260869565244,0.19565217391304346,0.32608695652173914,0.4565217391304348,0.6086956521739131,0.6956521739130435,0.7826086956521738,0.8695652173913044,1.0],"y":[0.0,0.0,0.0,0.0,0.0,9.810236351457512,15.2392688124945,37.889733396089085,40.78368206909373,41.64664416022183],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[0.0,0.043478260869565244,0.19565217391304346,0.32608695652173914,0.4565217391304348,0.6086956521739131,0.6956521739130435,0.7826086956521738,0.8695652173913044,1.0],"y":[45.77850766868475,38.59503994481991,100.0,25.285560937378328,24.800392448392667,28.348927894064158,29.482742301225993,92.66467731219737,64.58950181287572,88.30030523137889],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[0.0,0.043478260869565244,0.19565217391304346,0.32608695652173914,0.4565217391304348,0.6086956521739131,0.6956521739130435,0.7826086956521738,0.8695652173913044,1.0],"y":[100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[0.0,0.043478260869565244,0.19565217391304346,0.32608695652173914,0.4565217391304348,0.6086956521739131,0.6956521739130435,0.7826086956521738,0.8695652173913044,1.0],"y":[100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[0.0,0.043478260869565244,0.19565217391304346,0.32608695652173914,0.4565217391304348,0.6086956521739131,0.6956521739130435,0.7826086956521738,0.8695652173913044,1.0],"y":[32.28510087908657,22.49678973665759,7.069472564914017,0.0,0.0,0.0,7.267559603387949,51.07668543215914,82.13133737797021,79.41868571634008],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[0.0,0.043478260869565244,0.19565217391304346,0.32608695652173914,0.4565217391304348,0.6086956521739131,0.6956521739130435,0.7826086956521738,0.8695652173913044,1.0],"y":[26.73746626782184,18.028655289193484,17.393766583053814,0.0,0.0,0.0,0.0,17.664640806793386,60.158932451469106,89.4962484448891],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[0.0,0.043478260869565244,0.19565217391304346,0.32608695652173914,0.4565217391304348,0.6086956521739131,0.6956521739130435,0.7826086956521738,0.8695652173913044,1.0],"y":[100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[0.0,0.043478260869565244,0.19565217391304346,0.32608695652173914,0.4565217391304348,0.6086956521739131,0.6956521739130435,0.7826086956521738,0.8695652173913044,1.0],"y":[0.0,0.0,0.0,0.0,0.0,0.0,28.952512645740025,53.31841644715899,79.3526804222243,100.0],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[0.0,0.043478260869565244,0.19565217391304346,0.32608695652173914,0.4565217391304348,0.6086956521739131,0.6956521739130435,0.7826086956521738,0.8695652173913044,1.0],"y":[36.47891409894016,31.12747609224963,22.012710089533428,0.0,11.975572578411835,33.54949138190813,56.20646360871564,81.91453184775442,82.53440628063629,91.10429890445818],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[0.0,0.043478260869565244,0.19565217391304346,0.32608695652173914,0.4565217391304348,0.6086956521739131,0.6956521739130435,0.7826086956521738,0.8695652173913044,1.0],"y":[9.108492631100782,8.581047387105304,25.498945892856906,9.111972976585651,0.0,18.923948419934614,17.52579181642243,74.9843834868414,100.0,100.0],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[0.0,0.043478260869565244,0.19565217391304346,0.32608695652173914,0.4565217391304348,0.6086956521739131,0.6956521739130435,0.7826086956521738,0.8695652173913044,1.0],"y":[45.08240248749304,35.484907194557884,69.58793604091703,19.695113856908247,28.462413705146343,45.618221982741254,35.19046089028085,61.43904085623373,75.70224630955786,89.4910902353637],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[0.0,0.043478260869565244,0.19565217391304346,0.32608695652173914,0.4565217391304348,0.6086956521739131,0.6956521739130435,0.7826086956521738,0.8695652173913044,1.0],"y":[44.478507942867715,51.94765371307442,41.253689794256,9.763814323319002,0.0,0.0,0.0,13.001845028963901,43.78759843730862,75.31007462408867],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[0.0,0.043478260869565244,0.19565217391304346,0.32608695652173914,0.4565217391304348,0.6086956521739131,0.6956521739130435,0.7826086956521738,0.8695652173913044,1.0],"y":[36.60339396924567,36.33392453567561,24.742204748873082,0.0,11.44758738439563,31.648829855372444,44.84498518824908,69.85179302938793,72.53092010400482,75.45077720887016],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[0.0,0.043478260869565244,0.19565217391304346,0.32608695652173914,0.4565217391304348,0.6086956521739131,0.6956521739130435,0.7826086956521738,0.8695652173913044,1.0],"y":[0.0,8.736139178882429,7.015624859162478,0.0,0.0,0.0,12.506062678338967,35.335684909723845,77.35715206733524,90.66502882865791],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[0.0,0.043478260869565244,0.19565217391304346,0.32608695652173914,0.4565217391304348,0.6086956521739131,0.6956521739130435,0.7826086956521738,0.8695652173913044,1.0],"y":[100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[0.0,0.043478260869565244,0.19565217391304346,0.32608695652173914,0.4565217391304348,0.6086956521739131,0.6956521739130435,0.7826086956521738,0.8695652173913044,1.0],"y":[0.0,0.0,0.0,0.0,0.0,13.284344623809746,41.1457261227393,61.37226314815466,82.2969843503187,88.83705143480952],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[0.0,0.043478260869565244,0.19565217391304346,0.32608695652173914,0.4565217391304348,0.6086956521739131,0.6956521739130435,0.7826086956521738,0.8695652173913044,1.0],"y":[74.232766645734,71.81866849677321,34.05830098421199,0.0,0.0,0.0,36.6750179306087,63.13471786948068,80.82608039284537,88.2966868363601],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[0.0,0.043478260869565244,0.19565217391304346,0.32608695652173914,0.4565217391304348,0.6086956521739131,0.6956521739130435,0.7826086956521738,0.8695652173913044,1.0],"y":[100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[0.0,0.043478260869565244,0.19565217391304346,0.32608695652173914,0.4565217391304348,0.6086956521739131,0.6956521739130435,0.7826086956521738,0.8695652173913044,1.0],"y":[0.0,0.0,0.0,0.0,0.0,17.47276812884025,29.990174290031863,90.51009441993068,100.0,100.0],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[0.0,0.043478260869565244,0.19565217391304346,0.32608695652173914,0.4565217391304348,0.6086956521739131,0.6956521739130435,0.7826086956521738,0.8695652173913044,1.0],"y":[18.39227661559875,19.46384745652322,13.231454777327691,0.0,0.0,0.0,22.226897833690845,43.971513070463715,62.584042103187386,63.79653185486739],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[0.0,0.043478260869565244,0.19565217391304346,0.32608695652173914,0.4565217391304348,0.6086956521739131,0.6956521739130435,0.7826086956521738,0.8695652173913044,1.0],"y":[15.306724025882312,17.28759881296963,46.932170341750464,17.05076695438271,0.0,7.240175699627469,38.08776718603376,64.29983295650493,75.53378843828223,74.67308049724679],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[0.0,0.043478260869565244,0.19565217391304346,0.32608695652173914,0.4565217391304348,0.6086956521739131,0.6956521739130435,0.7826086956521738,0.8695652173913044,1.0],"y":[0.0,0.0,0.0,0.0,7.198708323639866,20.852461106854104,49.304381764253705,70.5900290345429,54.76068566020387,66.76078270309038],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[0.0,0.043478260869565244,0.19565217391304346,0.32608695652173914,0.4565217391304348,0.6086956521739131,0.6956521739130435,0.7826086956521738,0.8695652173913044,1.0],"y":[100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[0.0,0.043478260869565244,0.19565217391304346,0.32608695652173914,0.4565217391304348,0.6086956521739131,0.6956521739130435,0.7826086956521738,0.8695652173913044,1.0],"y":[100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[0.0,0.043478260869565244,0.19565217391304346,0.32608695652173914,0.4565217391304348,0.6086956521739131,0.6956521739130435,0.7826086956521738,0.8695652173913044,1.0],"y":[0.0,0.0,0.0,8.014304391435756,13.55636495808036,36.99576042698138,78.57606807520952,63.083118132857095,80.04141226503701,83.80730892249917],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[0.0,0.043478260869565244,0.19565217391304346,0.32608695652173914,0.4565217391304348,0.6086956521739131,0.6956521739130435,0.7826086956521738,0.8695652173913044,1.0],"y":[0.0,0.0,0.0,7.734980699464939,22.398999453397384,39.23170994026394,51.38427146478223,29.43566198903809,55.51773949615209,87.53983915422393],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[0.0,0.043478260869565244,0.19565217391304346,0.32608695652173914,0.4565217391304348,0.6086956521739131,0.6956521739130435,0.7826086956521738,0.8695652173913044,1.0],"y":[29.294369889718052,27.968239895123993,13.560653382032637,8.830790560756176,0.0,0.0,5.423839939636839,25.151835818231245,42.47418836227803,50.732193263617816],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[0.0,0.043478260869565244,0.19565217391304346,0.32608695652173914,0.4565217391304348,0.6086956521739131,0.6956521739130435,0.7826086956521738,0.8695652173913044,1.0],"y":[100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[0.0,0.043478260869565244,0.19565217391304346,0.32608695652173914,0.4565217391304348,0.6086956521739131,0.6956521739130435,0.7826086956521738,0.8695652173913044,1.0],"y":[0.0,11.979337615691625,12.308517062282288,0.0,13.077017241381439,44.773005930494556,64.12418747750324,88.43446332930223,100.0,100.0],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[0.0,0.043478260869565244,0.19565217391304346,0.32608695652173914,0.4565217391304348,0.6086956521739131,0.6956521739130435,0.7826086956521738,0.8695652173913044,1.0],"y":[0.0,0.0,10.46097715208942,27.428082101157763,0.0,0.0,6.947010783680511,12.504884924400036,77.86923469321503,100.0],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[0.0,0.043478260869565244,0.19565217391304346,0.32608695652173914,0.4565217391304348,0.6086956521739131,0.6956521739130435,0.7826086956521738,0.8695652173913044,1.0],"y":[0.0,0.0,0.0,0.0,0.0,8.41948511703227,7.556486293039801,21.436598609725735,63.22351163494305,79.02232539947975],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[0.0,0.043478260869565244,0.19565217391304346,0.32608695652173914,0.4565217391304348,0.6086956521739131,0.6956521739130435,0.7826086956521738,0.8695652173913044,1.0],"y":[100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0,100.0],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[0.0,0.043478260869565244,0.19565217391304346,0.32608695652173914,0.4565217391304348,0.6086956521739131,0.6956521739130435,0.7826086956521738,0.8695652173913044,1.0],"y":[31.938439062055206,28.052054467393937,22.44601628184633,0.0,0.0,8.07411468629757,33.150581920147445,47.19188917346537,65.46700027460591,89.9727807709365],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[0.0,0.043478260869565244,0.19565217391304346,0.32608695652173914,0.4565217391304348,0.6086956521739131,0.6956521739130435,0.7826086956521738,0.8695652173913044,1.0],"y":[45.55047042273385,36.950767865918245,76.87797006733632,17.060776401969726,26.3514570652155,42.24856728380922,32.512981035220164,63.12032643585388,74.80670555813387,88.97989369103769],"type":"scatter"},{"hoverinfo":"skip","line":{"color":"grey"},"mode":"lines","opacity":0.1,"showlegend":false,"x":[0.0,0.043478260869565244,0.19565217391304346,0.32608695652173914,0.4565217391304348,0.6086956521739131,0.6956521739130435,0.7826086956521738,0.8695652173913044,1.0],"y":[38.40814580536629,20.743439630968304,0.0,11.73317014451252,0.0,0.9125203443534987,10.222604180982753,28.80409273817044,68.38308442506407,100.0],"type":"scatter"}],                        {"plot_bgcolor":"#fff","title":{"text":"pdp plot for scaling__age"},"xaxis":{"title":{"text":"scaling__age"}},"yaxis":{"title":{"text":"Predicted charges (Predicted %)"}},"template":{"data":{"scatter":[{"type":"scatter"}]}},"showlegend":false,"margin":{"t":40,"b":40,"l":40,"r":40}},                        {"responsive": true}                    )                };                            </script>        </div>
+</div>
+        
+</div> 
+    
+    </div>
+  </div>
+</div>
+
+</div>
+        
+</div> 
+    
+</div>
+        
+</div> 
+        </div><div>
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+
+<div class="row row-cols-1 g-4" style="margin-top: 20px;">
+    
+<div class="col">
+
+<div class="card h-100" >
+  <div class="card-header"><h3 class="card-title">Contributions Table</h3><h6 class="card-subtitle">How has each feature contributed to the prediction?</h6></div>
+  <div class="card-body">
+    <div class="w-100">
+    
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+<div>no index selected</div>
+</div>
+        
+</div> 
+    
+    </div>
+  </div>
+</div>
+
+</div>
+        
+</div> 
+    
+</div>
+        
+</div> 
+    
+    </div>
+</div>
+    
+</div>
+
+<div class="tab-pane " id="myTab3"
+     role="tabpanel" aria-labelledby="myTab3-tab"> <div><div><H1>What if...</H1></div>
+<div>
+    <div>
+    
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+
+<div class="row row-cols-2 g-4" style="margin-top: 20px;">
+    
+<div class="col">
+
+<div class="card h-100" >
+  <div class="card-header"><h3 class="card-title">Select Random Index</h3></div>
+  <div class="card-body">
+    <div class="w-100">
+    
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+Selected index: <b>None</b>
+</div>
+        
+</div> 
+    
+    </div>
+  </div>
+</div>
+
+</div>
+        
+<div class="col">
+
+<div class="card h-100" >
+  <div class="card-header"><h3 class="card-title">Prediction</h3></div>
+  <div class="card-body">
+    <div class="w-100">
+    
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+<div>input data incorrect</div>
+</div>
+        
+</div> 
+    
+    </div>
+  </div>
+</div>
+
+</div>
+        
+</div> 
+    
+</div>
+        
+</div> 
+        </div><div>
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+
+<div class="row row-cols-1 g-4" style="margin-top: 20px;">
+    
+<div class="col">
+
+<div class="card h-100" >
+  <div class="card-header"><h3 class="card-title">Feature Input</h3><h6 class="card-subtitle">Adjust the feature values to change the prediction</h6></div>
+  <div class="card-body">
+    <div class="w-100">
+    
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+Selected: <b>None</b>
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+
+<div style="display:flex;flex-direction:column;">
+    <label for="scaling__age">scaling__age</label>
+    <input id="scaling__age" type="text" value="None" name="scaling__age" disabled>
+</div>
+    
+<div style="display:flex;flex-direction:column;">
+    <label for="scaling__bmi">scaling__bmi</label>
+    <input id="scaling__bmi" type="text" value="None" name="scaling__bmi" disabled>
+</div>
+    
+<div style="display:flex;flex-direction:column;">
+    <label for="ohe__region_southwest">ohe__region_southwest</label>
+    <input id="ohe__region_southwest" type="text" value="None" name="ohe__region_southwest" disabled>
+</div>
+    
+</div>
+        
+<div class="col">
+
+<div style="display:flex;flex-direction:column;">
+    <label for="ohe__smoker_no">ohe__smoker_no</label>
+    <input id="ohe__smoker_no" type="text" value="None" name="ohe__smoker_no" disabled>
+</div>
+    
+<div style="display:flex;flex-direction:column;">
+    <label for="ohe__sex_male">ohe__sex_male</label>
+    <input id="ohe__sex_male" type="text" value="None" name="ohe__sex_male" disabled>
+</div>
+    
+<div style="display:flex;flex-direction:column;">
+    <label for="ohe__region_southeast">ohe__region_southeast</label>
+    <input id="ohe__region_southeast" type="text" value="None" name="ohe__region_southeast" disabled>
+</div>
+    
+</div>
+        
+<div class="col">
+
+<div style="display:flex;flex-direction:column;">
+    <label for="ohe__smoker_yes">ohe__smoker_yes</label>
+    <input id="ohe__smoker_yes" type="text" value="None" name="ohe__smoker_yes" disabled>
+</div>
+    
+<div style="display:flex;flex-direction:column;">
+    <label for="ohe__sex_female">ohe__sex_female</label>
+    <input id="ohe__sex_female" type="text" value="None" name="ohe__sex_female" disabled>
+</div>
+    
+<div style="display:flex;flex-direction:column;">
+    <label for="ohe__region_northwest">ohe__region_northwest</label>
+    <input id="ohe__region_northwest" type="text" value="None" name="ohe__region_northwest" disabled>
+</div>
+    
+</div>
+        
+<div class="col">
+
+<div style="display:flex;flex-direction:column;">
+    <label for="scaling__children">scaling__children</label>
+    <input id="scaling__children" type="text" value="None" name="scaling__children" disabled>
+</div>
+    
+<div style="display:flex;flex-direction:column;">
+    <label for="ohe__region_northeast">ohe__region_northeast</label>
+    <input id="ohe__region_northeast" type="text" value="None" name="ohe__region_northeast" disabled>
+</div>
+    
+</div>
+        
+</div> 
+    
+</div>
+        
+</div> 
+    
+    </div>
+  </div>
+</div>
+
+</div>
+        
+</div> 
+    
+</div>
+        
+</div> 
+        </div><div>
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+
+<div class="row row-cols-2 g-4" style="margin-top: 20px;">
+    
+<div class="col">
+
+<div class="card h-100" >
+  <div class="card-header"><h3 class="card-title">Contributions Plot</h3><h6 class="card-subtitle">How has each feature contributed to the prediction?</h6></div>
+  <div class="card-body">
+    <div class="w-100">
+    
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+<div>input data incorrect</div>
+</div>
+        
+</div> 
+    
+    </div>
+  </div>
+</div>
+
+</div>
+        
+<div class="col">
+
+<div class="card h-100" >
+  <div class="card-header"><h3 class="card-title">Partial Dependence Plot</h3></div>
+  <div class="card-body">
+    <div class="w-100">
+    
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+<div>input data incorrect</div>
+</div>
+        
+</div> 
+    
+    </div>
+  </div>
+</div>
+
+</div>
+        
+</div> 
+    
+</div>
+        
+</div> 
+        </div><div>
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+
+<div class="row row-cols-1 g-4" style="margin-top: 20px;">
+    
+<div class="col">
+
+<div class="card h-100" >
+  <div class="card-header"><h3 class="card-title">Contributions Table</h3><h6 class="card-subtitle">How has each feature contributed to the prediction?</h6></div>
+  <div class="card-body">
+    <div class="w-100">
+    
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+<div>input data incorrect</div>
+</div>
+        
+</div> 
+    
+    </div>
+  </div>
+</div>
+
+</div>
+        
+</div> 
+    
+</div>
+        
+</div> 
+    
+    </div>
+</div>
+    </div>
+</div>
+
+<div class="tab-pane " id="myTab4"
+     role="tabpanel" aria-labelledby="myTab4-tab"> <div><H1>Feature Dependence</H1></div>
+<div>
+    <div>
+    
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+
+<div class="row row-cols-2 g-4" style="margin-top: 20px;">
+    
+<div class="col">
+
+<div class="card h-100" >
+  <div class="card-header"><h3 class="card-title">Shap Summary</h3><h6 class="card-subtitle">Ordering features by shap value</h6></div>
+  <div class="card-body">
+    <div class="w-100">
+    
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+<div>                        <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-2.24.1.min.js"></script>                <div id="e3e3e1b3-77e9-4394-99f7-e21d912381b9" class="plotly-graph-div" style="height:420px; width:100%;"></div>            <script type="text/javascript">                                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("e3e3e1b3-77e9-4394-99f7-e21d912381b9")) {                    Plotly.newPlot(                        "e3e3e1b3-77e9-4394-99f7-e21d912381b9",                        [{"hoverinfo":"text","orientation":"h","x":[0.007305768833734833,0.008710745489068293,0.011075412622136675,0.011538784161772156,0.017926717441834855,0.01792671744183488,0.0190787085507182,0.03432345051850295,0.1382243758604041,0.13822437586040442,0.17618523322617494],"y":["11. ohe__region_northwest","10. ohe__region_southeast","9. ohe__region_southwest","8. ohe__region_northeast","7. ohe__sex_female","6. ohe__sex_male","5. scaling__bmi","4. scaling__children","3. ohe__smoker_yes","2. ohe__smoker_no","1. scaling__age"],"type":"bar"}],                        {"plot_bgcolor":"#fff","showlegend":false,"title":{"text":"Average impact on predicted charges\u003cbr\u003e(mean absolute SHAP value)"},"template":{"data":{"scatter":[{"type":"scatter"}]}},"yaxis":{"automargin":true},"xaxis":{"automargin":true,"title":{"text":""}},"height":420,"margin":{"b":40,"l":147,"pad":4,"r":40,"t":40}},                        {"responsive": true}                    )                };                            </script>        </div>
+</div>
+        
+</div> 
+    
+    </div>
+  </div>
+</div>
+
+</div>
+        
+<div class="col">
+
+<div class="card h-100" >
+  <div class="card-header"><h3 class="card-title">Shap Dependence</h3><h6 class="card-subtitle">Relationship between feature value and SHAP value</h6></div>
+  <div class="card-body">
+    <div class="w-100">
+    
+<div class="row" style="margin-top: 20px;">
+    
+<div class="col">
+<div>                        <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+        <script charset="utf-8" src="https://cdn.plot.ly/plotly-2.24.1.min.js"></script>                <div id="30d261a8-6d05-4bfd-86bd-0469b69de010" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script type="text/javascript">                                    window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("30d261a8-6d05-4bfd-86bd-0469b69de010")) {                    Plotly.newPlot(                        "30d261a8-6d05-4bfd-86bd-0469b69de010",                        [{"hoverinfo":"text","marker":{"color":[1.0,1.0,1.0,1.0,0.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.0,1.0,1.0,1.0,0.0,1.0,1.0,1.0,0.0,0.0,1.0,1.0,1.0,1.0,0.0,1.0,1.0,1.0,1.0,0.0,0.0,0.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.0,1.0,1.0,1.0,0.0,1.0,1.0,1.0,0.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.0,1.0,0.0,0.0,1.0,0.0,1.0,1.0,0.0,1.0,0.0,1.0,1.0,0.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.0,1.0,1.0,1.0,1.0,0.0,1.0,1.0,1.0,0.0,1.0,1.0,0.0,0.0,1.0,1.0,0.0,1.0,1.0,1.0,1.0,0.0,0.0,1.0,0.0,0.0,1.0,1.0,1.0,1.0,0.0,1.0,0.0,0.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.0,1.0,1.0,1.0,1.0,0.0,0.0,1.0,1.0,1.0,1.0,1.0,1.0,0.0,1.0,0.0,0.0,1.0,1.0,1.0,1.0,1.0,0.0,1.0,0.0,1.0,1.0,1.0,1.0,1.0,0.0,1.0,0.0,1.0,1.0,0.0,1.0,1.0,1.0,0.0,0.0,1.0,1.0,0.0,1.0,1.0,1.0,1.0,0.0,1.0,1.0,1.0,0.0,1.0,1.0,1.0,0.0,1.0,1.0,1.0,1.0,0.0,0.0,1.0,1.0,1.0,1.0,0.0,0.0,1.0,0.0,0.0,1.0,1.0,1.0,1.0,0.0,1.0,1.0,1.0,0.0,1.0,1.0,0.0,1.0,1.0,1.0,1.0,1.0,0.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.0],"colorbar":{"title":{"text":"ohe__smoker_no"}},"colorscale":[[0.0,"rgb(0,0,255)"],[1.0,"rgb(255,0,0)"]],"opacity":0.6,"showscale":true,"size":7},"mode":"markers","text":["None=1114\u003cbr\u003escaling__age=0.10869565217391308\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.202","None=816\u003cbr\u003escaling__age=0.13043478260869568\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.203","None=900\u003cbr\u003escaling__age=0.673913043478261\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.050","None=754\u003cbr\u003escaling__age=0.13043478260869568\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.138","None=362\u003cbr\u003escaling__age=0.02173913043478265\u003cbr\u003eohe__smoker_no=0.0\u003cbr\u003eSHAP=-0.095","None=771\u003cbr\u003escaling__age=0.7608695652173914\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=0.134","None=1119\u003cbr\u003escaling__age=0.26086956521739135\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.243","None=310\u003cbr\u003escaling__age=0.6956521739130435\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.025","None=363\u003cbr\u003escaling__age=0.06521739130434784\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.204","None=807\u003cbr\u003escaling__age=0.02173913043478265\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.198","None=942\u003cbr\u003escaling__age=0.0\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.226","None=472\u003cbr\u003escaling__age=0.02173913043478265\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.194","None=1160\u003cbr\u003escaling__age=0.5434782608695652\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.157","None=1150\u003cbr\u003escaling__age=0.0\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.171","None=103\u003cbr\u003escaling__age=0.9347826086956521\u003cbr\u003eohe__smoker_no=0.0\u003cbr\u003eSHAP=0.232","None=920\u003cbr\u003escaling__age=0.9565217391304348\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=0.556","None=1277\u003cbr\u003escaling__age=0.30434782608695654\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.231","None=1180\u003cbr\u003escaling__age=0.5217391304347826\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.138","None=312\u003cbr\u003escaling__age=0.5434782608695652\u003cbr\u003eohe__smoker_no=0.0\u003cbr\u003eSHAP=-0.056","None=614\u003cbr\u003escaling__age=0.043478260869565244\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.166","None=726\u003cbr\u003escaling__age=0.5\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.184","None=285\u003cbr\u003escaling__age=0.6086956521739131\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.103","None=419\u003cbr\u003escaling__age=0.9782608695652173\u003cbr\u003eohe__smoker_no=0.0\u003cbr\u003eSHAP=0.272","None=783\u003cbr\u003escaling__age=0.6956521739130435\u003cbr\u003eohe__smoker_no=0.0\u003cbr\u003eSHAP=-0.024","None=1073\u003cbr\u003escaling__age=0.7826086956521738\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=0.142","None=1043\u003cbr\u003escaling__age=0.21739130434782616\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.187","None=253\u003cbr\u003escaling__age=0.19565217391304346\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.170","None=714\u003cbr\u003escaling__age=0.13043478260869568\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.115","None=677\u003cbr\u003escaling__age=0.9130434782608696\u003cbr\u003eohe__smoker_no=0.0\u003cbr\u003eSHAP=0.209","None=361\u003cbr\u003escaling__age=0.3695652173913043\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.074","None=133\u003cbr\u003escaling__age=0.02173913043478265\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.200","None=25\u003cbr\u003escaling__age=0.8913043478260869\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=0.432","None=930\u003cbr\u003escaling__age=0.17391304347826086\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.146","None=689\u003cbr\u003escaling__age=0.19565217391304346\u003cbr\u003eohe__smoker_no=0.0\u003cbr\u003eSHAP=-0.079","None=30\u003cbr\u003escaling__age=0.08695652173913049\u003cbr\u003eohe__smoker_no=0.0\u003cbr\u003eSHAP=-0.100","None=1282\u003cbr\u003escaling__age=0.0\u003cbr\u003eohe__smoker_no=0.0\u003cbr\u003eSHAP=-0.108","None=733\u003cbr\u003escaling__age=0.6521739130434783\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.114","None=1238\u003cbr\u003escaling__age=0.4130434782608696\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.148","None=859\u003cbr\u003escaling__age=0.8478260869565217\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=0.296","None=709\u003cbr\u003escaling__age=0.3913043478260869\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.282","None=516\u003cbr\u003escaling__age=0.043478260869565244\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.164","None=696\u003cbr\u003escaling__age=0.7608695652173914\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=0.112","None=1101\u003cbr\u003escaling__age=0.7608695652173914\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=0.104","None=862\u003cbr\u003escaling__age=0.8043478260869565\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=0.283","None=954\u003cbr\u003escaling__age=0.34782608695652173\u003cbr\u003eohe__smoker_no=0.0\u003cbr\u003eSHAP=-0.090","None=356\u003cbr\u003escaling__age=0.6086956521739131\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.096","None=303\u003cbr\u003escaling__age=0.21739130434782616\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.194","None=884\u003cbr\u003escaling__age=0.15217391304347827\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.148","None=257\u003cbr\u003escaling__age=0.4347826086956522\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.233","None=1092\u003cbr\u003escaling__age=0.10869565217391308\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.186","None=155\u003cbr\u003escaling__age=0.5652173913043479\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.136","None=941\u003cbr\u003escaling__age=0.6956521739130435\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.035","None=554\u003cbr\u003escaling__age=0.15217391304347827\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.227","None=553\u003cbr\u003escaling__age=0.7391304347826086\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=0.078","None=1275\u003cbr\u003escaling__age=0.8478260869565217\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=0.321","None=52\u003cbr\u003escaling__age=0.6521739130434783\u003cbr\u003eohe__smoker_no=0.0\u003cbr\u003eSHAP=-0.045","None=1167\u003cbr\u003escaling__age=0.23913043478260876\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.146","None=712\u003cbr\u003escaling__age=0.5434782608695652\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.245","None=976\u003cbr\u003escaling__age=0.6521739130434783\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.112","None=629\u003cbr\u003escaling__age=0.5652173913043479\u003cbr\u003eohe__smoker_no=0.0\u003cbr\u003eSHAP=-0.088","None=1213\u003cbr\u003escaling__age=0.7391304347826086\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=0.111","None=1044\u003cbr\u003escaling__age=0.8043478260869565\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=0.138","None=287\u003cbr\u003escaling__age=0.9782608695652173\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=0.570","None=793\u003cbr\u003escaling__age=0.7608695652173914\u003cbr\u003eohe__smoker_no=0.0\u003cbr\u003eSHAP=0.035","None=215\u003cbr\u003escaling__age=0.5\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.222","None=839\u003cbr\u003escaling__age=0.8913043478260869\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=0.545","None=268\u003cbr\u003escaling__age=0.5869565217391305\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.111","None=797\u003cbr\u003escaling__age=0.26086956521739135\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.143","None=631\u003cbr\u003escaling__age=0.13043478260869568\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.197","None=870\u003cbr\u003escaling__age=0.6956521739130435\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.048","None=635\u003cbr\u003escaling__age=1.0\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=0.522","None=377\u003cbr\u003escaling__age=0.13043478260869568\u003cbr\u003eohe__smoker_no=0.0\u003cbr\u003eSHAP=-0.089","None=278\u003cbr\u003escaling__age=0.8913043478260869\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=0.443","None=1062\u003cbr\u003escaling__age=0.8913043478260869\u003cbr\u003eohe__smoker_no=0.0\u003cbr\u003eSHAP=0.201","None=1037\u003cbr\u003escaling__age=0.5869565217391305\u003cbr\u003eohe__smoker_no=0.0\u003cbr\u003eSHAP=-0.070","None=710\u003cbr\u003escaling__age=0.0\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.154","None=1096\u003cbr\u003escaling__age=0.7173913043478262\u003cbr\u003eohe__smoker_no=0.0\u003cbr\u003eSHAP=0.002","None=452\u003cbr\u003escaling__age=0.13043478260869568\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.188","None=1326\u003cbr\u003escaling__age=0.5217391304347826\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.093","None=757\u003cbr\u003escaling__age=0.6304347826086956\u003cbr\u003eohe__smoker_no=0.0\u003cbr\u003eSHAP=-0.046","None=509\u003cbr\u003escaling__age=0.8478260869565217\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=0.420","None=845\u003cbr\u003escaling__age=0.9130434782608696\u003cbr\u003eohe__smoker_no=0.0\u003cbr\u003eSHAP=0.254","None=1088\u003cbr\u003escaling__age=0.7391304347826086\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=0.002","None=435\u003cbr\u003escaling__age=0.9130434782608696\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=0.456","None=128\u003cbr\u003escaling__age=0.30434782608695654\u003cbr\u003eohe__smoker_no=0.0\u003cbr\u003eSHAP=-0.097","None=1136\u003cbr\u003escaling__age=0.5652173913043479\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.128","None=613\u003cbr\u003escaling__age=0.34782608695652173\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.215","None=781\u003cbr\u003escaling__age=0.0\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.184","None=466\u003cbr\u003escaling__age=0.9130434782608696\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=0.494","None=745\u003cbr\u003escaling__age=0.6956521739130435\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.036","None=485\u003cbr\u003escaling__age=0.28260869565217395\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.271","None=130\u003cbr\u003escaling__age=0.8913043478260869\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=0.495","None=777\u003cbr\u003escaling__age=0.5869565217391305\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.120","None=107\u003cbr\u003escaling__age=0.17391304347826086\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.132","None=1027\u003cbr\u003escaling__age=0.10869565217391308\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.178","None=490\u003cbr\u003escaling__age=0.02173913043478265\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.188","None=330\u003cbr\u003escaling__age=0.9347826086956521\u003cbr\u003eohe__smoker_no=0.0\u003cbr\u003eSHAP=0.235","None=1209\u003cbr\u003escaling__age=0.8913043478260869\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=0.383","None=1025\u003cbr\u003escaling__age=0.06521739130434784\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.203","None=853\u003cbr\u003escaling__age=0.7608695652173914\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=0.044","None=578\u003cbr\u003escaling__age=0.7391304347826086\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.022","None=892\u003cbr\u003escaling__age=0.7826086956521738\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=0.156","None=678\u003cbr\u003escaling__age=0.8260869565217392\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=0.277","None=27\u003cbr\u003escaling__age=0.8043478260869565\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=0.265","None=77\u003cbr\u003escaling__age=0.06521739130434784\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.207","None=711\u003cbr\u003escaling__age=0.6956521739130435\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.025","None=270\u003cbr\u003escaling__age=0.0\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.158","None=398\u003cbr\u003escaling__age=1.0\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=0.413","None=143\u003cbr\u003escaling__age=0.23913043478260876\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.159","None=819\u003cbr\u003escaling__age=0.32608695652173914\u003cbr\u003eohe__smoker_no=0.0\u003cbr\u003eSHAP=-0.105","None=209\u003cbr\u003escaling__age=0.4782608695652174\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.182","None=4\u003cbr\u003escaling__age=0.30434782608695654\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.087","None=1232\u003cbr\u003escaling__age=0.7826086956521738\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=0.252","None=313\u003cbr\u003escaling__age=0.673913043478261\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.096","None=261\u003cbr\u003escaling__age=0.043478260869565244\u003cbr\u003eohe__smoker_no=0.0\u003cbr\u003eSHAP=-0.088","None=1206\u003cbr\u003escaling__age=0.8913043478260869\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=0.467","None=358\u003cbr\u003escaling__age=0.10869565217391308\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.178","None=1145\u003cbr\u003escaling__age=0.7391304347826086\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=0.033","None=826\u003cbr\u003escaling__age=0.8260869565217392\u003cbr\u003eohe__smoker_no=0.0\u003cbr\u003eSHAP=0.129","None=1060\u003cbr\u003escaling__age=0.13043478260869568\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.158","None=980\u003cbr\u003escaling__age=0.7826086956521738\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=0.138","None=736\u003cbr\u003escaling__age=0.4130434782608696\u003cbr\u003eohe__smoker_no=0.0\u003cbr\u003eSHAP=-0.104","None=947\u003cbr\u003escaling__age=0.4130434782608696\u003cbr\u003eohe__smoker_no=0.0\u003cbr\u003eSHAP=-0.060","None=56\u003cbr\u003escaling__age=0.8695652173913044\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=0.394","None=179\u003cbr\u003escaling__age=0.5\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.230","None=259\u003cbr\u003escaling__age=0.02173913043478265\u003cbr\u003eohe__smoker_no=0.0\u003cbr\u003eSHAP=-0.079","None=547\u003cbr\u003escaling__age=0.7826086956521738\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=0.242","None=657\u003cbr\u003escaling__age=0.19565217391304346\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.124","None=985\u003cbr\u003escaling__age=0.5652173913043479\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.135","None=627\u003cbr\u003escaling__age=0.32608695652173914\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.138","None=70\u003cbr\u003escaling__age=0.19565217391304346\u003cbr\u003eohe__smoker_no=0.0\u003cbr\u003eSHAP=-0.102","None=1208\u003cbr\u003escaling__age=0.4130434782608696\u003cbr\u003eohe__smoker_no=0.0\u003cbr\u003eSHAP=-0.077","None=835\u003cbr\u003escaling__age=0.5217391304347826\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.105","None=742\u003cbr\u003escaling__age=0.7608695652173914\u003cbr\u003eohe__smoker_no=0.0\u003cbr\u003eSHAP=-0.008","None=893\u003cbr\u003escaling__age=0.6304347826086956\u003cbr\u003eohe__smoker_no=0.0\u003cbr\u003eSHAP=-0.044","None=676\u003cbr\u003escaling__age=0.8043478260869565\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=0.292","None=848\u003cbr\u003escaling__age=0.19565217391304346\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.180","None=747\u003cbr\u003escaling__age=0.02173913043478265\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.201","None=167\u003cbr\u003escaling__age=0.30434782608695654\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.257","None=238\u003cbr\u003escaling__age=0.02173913043478265\u003cbr\u003eohe__smoker_no=0.0\u003cbr\u003eSHAP=-0.090","None=988\u003cbr\u003escaling__age=0.34782608695652173\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.075","None=98\u003cbr\u003escaling__age=0.8260869565217392\u003cbr\u003eohe__smoker_no=0.0\u003cbr\u003eSHAP=0.128","None=94\u003cbr\u003escaling__age=1.0\u003cbr\u003eohe__smoker_no=0.0\u003cbr\u003eSHAP=0.269","None=532\u003cbr\u003escaling__age=0.8913043478260869\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=0.427","None=220\u003cbr\u003escaling__age=0.34782608695652173\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.191","None=1074\u003cbr\u003escaling__age=0.9130434782608696\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=0.507","None=802\u003cbr\u003escaling__age=0.06521739130434784\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.144","None=385\u003cbr\u003escaling__age=0.02173913043478265\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.178","None=248\u003cbr\u003escaling__age=0.02173913043478265\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.141","None=889\u003cbr\u003escaling__age=0.8478260869565217\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=0.263","None=456\u003cbr\u003escaling__age=0.8043478260869565\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=0.254","None=59\u003cbr\u003escaling__age=0.34782608695652173\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.260","None=846\u003cbr\u003escaling__age=0.7173913043478262\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=0.006","None=558\u003cbr\u003escaling__age=0.3695652173913043\u003cbr\u003eohe__smoker_no=0.0\u003cbr\u003eSHAP=-0.136","None=372\u003cbr\u003escaling__age=0.5217391304347826\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.180","None=284\u003cbr\u003escaling__age=0.7391304347826086\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=0.024","None=199\u003cbr\u003escaling__age=1.0\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=0.526","None=7\u003cbr\u003escaling__age=0.4130434782608696\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.308","None=1179\u003cbr\u003escaling__age=0.28260869565217395\u003cbr\u003eohe__smoker_no=0.0\u003cbr\u003eSHAP=-0.085","None=615\u003cbr\u003escaling__age=0.6304347826086956\u003cbr\u003eohe__smoker_no=0.0\u003cbr\u003eSHAP=-0.060","None=716\u003cbr\u003escaling__age=0.673913043478261\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.039","None=231\u003cbr\u003escaling__age=0.8913043478260869\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=0.430","None=47\u003cbr\u003escaling__age=0.21739130434782616\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.201","None=992\u003cbr\u003escaling__age=0.6956521739130435\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.031","None=1192\u003cbr\u003escaling__age=0.8695652173913044\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=0.343","None=204\u003cbr\u003escaling__age=0.6086956521739131\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.043","None=638\u003cbr\u003escaling__age=0.4565217391304348\u003cbr\u003eohe__smoker_no=0.0\u003cbr\u003eSHAP=-0.084","None=691\u003cbr\u003escaling__age=0.6304347826086956\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.086","None=265\u003cbr\u003escaling__age=0.6086956521739131\u003cbr\u003eohe__smoker_no=0.0\u003cbr\u003eSHAP=-0.049","None=185\u003cbr\u003escaling__age=0.3913043478260869\u003cbr\u003eohe__smoker_no=0.0\u003cbr\u003eSHAP=-0.084","None=612\u003cbr\u003escaling__age=0.0\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.183","None=484\u003cbr\u003escaling__age=0.6521739130434783\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.045","None=720\u003cbr\u003escaling__age=0.7173913043478262\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.029","None=640\u003cbr\u003escaling__age=0.32608695652173914\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.165","None=386\u003cbr\u003escaling__age=0.8695652173913044\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=0.470","None=1031\u003cbr\u003escaling__age=0.8043478260869565\u003cbr\u003eohe__smoker_no=0.0\u003cbr\u003eSHAP=0.094","None=652\u003cbr\u003escaling__age=0.6521739130434783\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.067","None=641\u003cbr\u003escaling__age=0.5217391304347826\u003cbr\u003eohe__smoker_no=0.0\u003cbr\u003eSHAP=-0.090","None=114\u003cbr\u003escaling__age=0.7391304347826086\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=0.071","None=906\u003cbr\u003escaling__age=0.19565217391304346\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.173","None=197\u003cbr\u003escaling__age=0.5869565217391305\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.162","None=1144\u003cbr\u003escaling__age=0.6956521739130435\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.052","None=242\u003cbr\u003escaling__age=0.8043478260869565\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=0.214","None=1313\u003cbr\u003escaling__age=0.02173913043478265\u003cbr\u003eohe__smoker_no=0.0\u003cbr\u003eSHAP=-0.095","None=756\u003cbr\u003escaling__age=0.4565217391304348\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.222","None=917\u003cbr\u003escaling__age=0.5869565217391305\u003cbr\u003eohe__smoker_no=0.0\u003cbr\u003eSHAP=-0.065","None=595\u003cbr\u003escaling__age=0.6086956521739131\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.085","None=936\u003cbr\u003escaling__age=0.5652173913043479\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.177","None=11\u003cbr\u003escaling__age=0.9565217391304348\u003cbr\u003eohe__smoker_no=0.0\u003cbr\u003eSHAP=0.269","None=938\u003cbr\u003escaling__age=0.0\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.128","None=8\u003cbr\u003escaling__age=0.4130434782608696\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.184","None=216\u003cbr\u003escaling__age=0.7608695652173914\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=0.194","None=53\u003cbr\u003escaling__age=0.3913043478260869\u003cbr\u003eohe__smoker_no=0.0\u003cbr\u003eSHAP=-0.075","None=514\u003cbr\u003escaling__age=0.4565217391304348\u003cbr\u003eohe__smoker_no=0.0\u003cbr\u003eSHAP=-0.068","None=291\u003cbr\u003escaling__age=0.23913043478260876\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.176","None=273\u003cbr\u003escaling__age=0.6956521739130435\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.099","None=314\u003cbr\u003escaling__age=0.19565217391304346\u003cbr\u003eohe__smoker_no=0.0\u003cbr\u003eSHAP=-0.089","None=37\u003cbr\u003escaling__age=0.17391304347826086\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.197","None=477\u003cbr\u003escaling__age=0.15217391304347827\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.146","None=770\u003cbr\u003escaling__age=0.9347826086956521\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=0.410","None=1294\u003cbr\u003escaling__age=0.8695652173913044\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=0.499","None=886\u003cbr\u003escaling__age=0.8478260869565217\u003cbr\u003eohe__smoker_no=0.0\u003cbr\u003eSHAP=0.165","None=539\u003cbr\u003escaling__age=0.7608695652173914\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=0.006","None=394\u003cbr\u003escaling__age=0.6086956521739131\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.131","None=778\u003cbr\u003escaling__age=0.3695652173913043\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.232","None=1186\u003cbr\u003escaling__age=0.043478260869565244\u003cbr\u003eohe__smoker_no=0.0\u003cbr\u003eSHAP=-0.079","None=584\u003cbr\u003escaling__age=0.02173913043478265\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.203","None=414\u003cbr\u003escaling__age=0.02173913043478265\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.195","None=662\u003cbr\u003escaling__age=0.30434782608695654\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.144","None=475\u003cbr\u003escaling__age=0.9347826086956521\u003cbr\u003eohe__smoker_no=0.0\u003cbr\u003eSHAP=0.256","None=748\u003cbr\u003escaling__age=0.6304347826086956\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.078","None=196\u003cbr\u003escaling__age=0.4565217391304348\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.203","None=556\u003cbr\u003escaling__age=0.6086956521739131\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.138","None=1131\u003cbr\u003escaling__age=0.19565217391304346\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.153","None=1288\u003cbr\u003escaling__age=0.043478260869565244\u003cbr\u003eohe__smoker_no=0.0\u003cbr\u003eSHAP=-0.067","None=92\u003cbr\u003escaling__age=0.8913043478260869\u003cbr\u003eohe__smoker_no=0.0\u003cbr\u003eSHAP=0.194","None=279\u003cbr\u003escaling__age=0.7173913043478262\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.011","None=147\u003cbr\u003escaling__age=0.7173913043478262\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.029","None=1129\u003cbr\u003escaling__age=0.02173913043478265\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.206","None=424\u003cbr\u003escaling__age=0.6521739130434783\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.075","None=1314\u003cbr\u003escaling__age=0.26086956521739135\u003cbr\u003eohe__smoker_no=0.0\u003cbr\u003eSHAP=-0.114","None=1306\u003cbr\u003escaling__age=0.23913043478260876\u003cbr\u003eohe__smoker_no=0.0\u003cbr\u003eSHAP=-0.115","None=245\u003cbr\u003escaling__age=0.7826086956521738\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=0.028","None=281\u003cbr\u003escaling__age=0.7826086956521738\u003cbr\u003eohe__smoker_no=0.0\u003cbr\u003eSHAP=0.071","None=1040\u003cbr\u003escaling__age=0.3695652173913043\u003cbr\u003eohe__smoker_no=0.0\u003cbr\u003eSHAP=-0.122","None=1211\u003cbr\u003escaling__age=0.4565217391304348\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.173","None=943\u003cbr\u003escaling__age=0.02173913043478265\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.209","None=354\u003cbr\u003escaling__age=0.0\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.238","None=955\u003cbr\u003escaling__age=0.28260869565217395\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.155","None=1249\u003cbr\u003escaling__age=0.30434782608695654\u003cbr\u003eohe__smoker_no=0.0\u003cbr\u003eSHAP=-0.076","None=6\u003cbr\u003escaling__age=0.6086956521739131\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.130","None=436\u003cbr\u003escaling__age=0.08695652173913049\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.183","None=1289\u003cbr\u003escaling__age=0.5652173913043479\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.118","None=1218\u003cbr\u003escaling__age=0.6086956521739131\u003cbr\u003eohe__smoker_no=0.0\u003cbr\u003eSHAP=-0.077","None=993\u003cbr\u003escaling__age=0.4347826086956522\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.180","None=191\u003cbr\u003escaling__age=0.3913043478260869\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.242","None=738\u003cbr\u003escaling__age=0.10869565217391308\u003cbr\u003eohe__smoker_no=0.0\u003cbr\u003eSHAP=-0.097","None=774\u003cbr\u003escaling__age=0.5\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.233","None=1199\u003cbr\u003escaling__age=0.28260869565217395\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.169","None=1151\u003cbr\u003escaling__age=0.8695652173913044\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=0.498","None=319\u003cbr\u003escaling__age=0.30434782608695654\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.139","None=180\u003cbr\u003escaling__age=0.8695652173913044\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=0.471","None=117\u003cbr\u003escaling__age=0.23913043478260876\u003cbr\u003eohe__smoker_no=0.0\u003cbr\u003eSHAP=-0.096","None=97\u003cbr\u003escaling__age=0.8043478260869565\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=0.178","None=1310\u003cbr\u003escaling__age=0.5217391304347826\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.191","None=864\u003cbr\u003escaling__age=0.7173913043478262\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=0.006","None=1020\u003cbr\u003escaling__age=0.7173913043478262\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.026","None=426\u003cbr\u003escaling__age=0.4347826086956522\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.177","None=255\u003cbr\u003escaling__age=0.8043478260869565\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=0.268","None=464\u003cbr\u003escaling__age=0.02173913043478265\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.200","None=1082\u003cbr\u003escaling__age=0.4347826086956522\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.175","None=1072\u003cbr\u003escaling__age=0.06521739130434784\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.173","None=536\u003cbr\u003escaling__age=0.32608695652173914\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.260","None=448\u003cbr\u003escaling__age=0.4782608695652174\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.220","None=50\u003cbr\u003escaling__age=0.0\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.201","None=89\u003cbr\u003escaling__age=0.8043478260869565\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=0.355","None=187\u003cbr\u003escaling__age=0.26086956521739135\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.247","None=1162\u003cbr\u003escaling__age=0.26086956521739135\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.160","None=928\u003cbr\u003escaling__age=0.9565217391304348\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=0.564","None=1203\u003cbr\u003escaling__age=0.7173913043478262\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.072","None=753\u003cbr\u003escaling__age=0.8695652173913044\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=0.431","None=1263\u003cbr\u003escaling__age=0.5434782608695652\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.198","None=164\u003cbr\u003escaling__age=0.4130434782608696\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.128","None=499\u003cbr\u003escaling__age=0.9565217391304348\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=0.576","None=283\u003cbr\u003escaling__age=0.8043478260869565\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=0.163","None=1055\u003cbr\u003escaling__age=0.8043478260869565\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=0.141","None=481\u003cbr\u003escaling__age=0.673913043478261\u003cbr\u003eohe__smoker_no=1.0\u003cbr\u003eSHAP=-0.063","None=1049\u003cbr\u003escaling__age=0.673913043478261\u003cbr\u003eohe__smoker_no=0.0\u003cbr\u003eSHAP=-0.041"],"x":[0.10869565217391308,0.13043478260869568,0.673913043478261,0.13043478260869568,0.02173913043478265,0.7608695652173914,0.26086956521739135,0.6956521739130435,0.06521739130434784,0.02173913043478265,0.0,0.02173913043478265,0.5434782608695652,0.0,0.9347826086956521,0.9565217391304348,0.30434782608695654,0.5217391304347826,0.5434782608695652,0.043478260869565244,0.5,0.6086956521739131,0.9782608695652173,0.6956521739130435,0.7826086956521738,0.21739130434782616,0.19565217391304346,0.13043478260869568,0.9130434782608696,0.3695652173913043,0.02173913043478265,0.8913043478260869,0.17391304347826086,0.19565217391304346,0.08695652173913049,0.0,0.6521739130434783,0.4130434782608696,0.8478260869565217,0.3913043478260869,0.043478260869565244,0.7608695652173914,0.7608695652173914,0.8043478260869565,0.34782608695652173,0.6086956521739131,0.21739130434782616,0.15217391304347827,0.4347826086956522,0.10869565217391308,0.5652173913043479,0.6956521739130435,0.15217391304347827,0.7391304347826086,0.8478260869565217,0.6521739130434783,0.23913043478260876,0.5434782608695652,0.6521739130434783,0.5652173913043479,0.7391304347826086,0.8043478260869565,0.9782608695652173,0.7608695652173914,0.5,0.8913043478260869,0.5869565217391305,0.26086956521739135,0.13043478260869568,0.6956521739130435,1.0,0.13043478260869568,0.8913043478260869,0.8913043478260869,0.5869565217391305,0.0,0.7173913043478262,0.13043478260869568,0.5217391304347826,0.6304347826086956,0.8478260869565217,0.9130434782608696,0.7391304347826086,0.9130434782608696,0.30434782608695654,0.5652173913043479,0.34782608695652173,0.0,0.9130434782608696,0.6956521739130435,0.28260869565217395,0.8913043478260869,0.5869565217391305,0.17391304347826086,0.10869565217391308,0.02173913043478265,0.9347826086956521,0.8913043478260869,0.06521739130434784,0.7608695652173914,0.7391304347826086,0.7826086956521738,0.8260869565217392,0.8043478260869565,0.06521739130434784,0.6956521739130435,0.0,1.0,0.23913043478260876,0.32608695652173914,0.4782608695652174,0.30434782608695654,0.7826086956521738,0.673913043478261,0.043478260869565244,0.8913043478260869,0.10869565217391308,0.7391304347826086,0.8260869565217392,0.13043478260869568,0.7826086956521738,0.4130434782608696,0.4130434782608696,0.8695652173913044,0.5,0.02173913043478265,0.7826086956521738,0.19565217391304346,0.5652173913043479,0.32608695652173914,0.19565217391304346,0.4130434782608696,0.5217391304347826,0.7608695652173914,0.6304347826086956,0.8043478260869565,0.19565217391304346,0.02173913043478265,0.30434782608695654,0.02173913043478265,0.34782608695652173,0.8260869565217392,1.0,0.8913043478260869,0.34782608695652173,0.9130434782608696,0.06521739130434784,0.02173913043478265,0.02173913043478265,0.8478260869565217,0.8043478260869565,0.34782608695652173,0.7173913043478262,0.3695652173913043,0.5217391304347826,0.7391304347826086,1.0,0.4130434782608696,0.28260869565217395,0.6304347826086956,0.673913043478261,0.8913043478260869,0.21739130434782616,0.6956521739130435,0.8695652173913044,0.6086956521739131,0.4565217391304348,0.6304347826086956,0.6086956521739131,0.3913043478260869,0.0,0.6521739130434783,0.7173913043478262,0.32608695652173914,0.8695652173913044,0.8043478260869565,0.6521739130434783,0.5217391304347826,0.7391304347826086,0.19565217391304346,0.5869565217391305,0.6956521739130435,0.8043478260869565,0.02173913043478265,0.4565217391304348,0.5869565217391305,0.6086956521739131,0.5652173913043479,0.9565217391304348,0.0,0.4130434782608696,0.7608695652173914,0.3913043478260869,0.4565217391304348,0.23913043478260876,0.6956521739130435,0.19565217391304346,0.17391304347826086,0.15217391304347827,0.9347826086956521,0.8695652173913044,0.8478260869565217,0.7608695652173914,0.6086956521739131,0.3695652173913043,0.043478260869565244,0.02173913043478265,0.02173913043478265,0.30434782608695654,0.9347826086956521,0.6304347826086956,0.4565217391304348,0.6086956521739131,0.19565217391304346,0.043478260869565244,0.8913043478260869,0.7173913043478262,0.7173913043478262,0.02173913043478265,0.6521739130434783,0.26086956521739135,0.23913043478260876,0.7826086956521738,0.7826086956521738,0.3695652173913043,0.4565217391304348,0.02173913043478265,0.0,0.28260869565217395,0.30434782608695654,0.6086956521739131,0.08695652173913049,0.5652173913043479,0.6086956521739131,0.4347826086956522,0.3913043478260869,0.10869565217391308,0.5,0.28260869565217395,0.8695652173913044,0.30434782608695654,0.8695652173913044,0.23913043478260876,0.8043478260869565,0.5217391304347826,0.7173913043478262,0.7173913043478262,0.4347826086956522,0.8043478260869565,0.02173913043478265,0.4347826086956522,0.06521739130434784,0.32608695652173914,0.4782608695652174,0.0,0.8043478260869565,0.26086956521739135,0.26086956521739135,0.9565217391304348,0.7173913043478262,0.8695652173913044,0.5434782608695652,0.4130434782608696,0.9565217391304348,0.8043478260869565,0.8043478260869565,0.673913043478261,0.673913043478261],"y":[-0.20159994313606278,-0.20270447149651608,-0.04996285067298729,-0.13783968582352812,-0.09524143618990195,0.13413229296521023,-0.24253165712663546,-0.02473204483050625,-0.20409145898804928,-0.19849418841683955,-0.22582472398452041,-0.19399429408771926,-0.1566478469165759,-0.1710269178611278,0.23161015686070396,0.5564349112320549,-0.23089086214905566,-0.13750052567711787,-0.056165115213898054,-0.16624863562023753,-0.1837207584849656,-0.10252965490214078,0.27205958778592265,-0.024126871209303007,0.1424536000420535,-0.18723867537786953,-0.17015754203994923,-0.11460139725864563,0.20908789875994158,-0.07367546225711015,-0.20000712789791295,0.43220651615950756,-0.14630951160993164,-0.07879682875562784,-0.09954992759501591,-0.10775497811260436,-0.11383814976068257,-0.14844399789925036,0.29595769015187917,-0.2821791385966275,-0.16427959835298162,0.11171831868099952,0.10387409955778446,0.2833672301323943,-0.08968723022337867,-0.09569719516525957,-0.19357009950669898,-0.14777517104046767,-0.23255072209014224,-0.18571824787713667,-0.1355852141441872,-0.03528408870332585,-0.22684673362585533,0.07786629243398914,0.32133431672397395,-0.044571971722351014,-0.14616967246280813,-0.24540166178549397,-0.11172153081068716,-0.08754763047894866,0.11071634649792225,0.137705484139907,0.5701542823717989,0.03462303502722305,-0.222128593802563,0.545312828669297,-0.11128510363700983,-0.1427128486893893,-0.1970480480135797,-0.04820153421183594,0.5218212853136706,-0.08888021667725443,0.4429739679578037,0.201367721803774,-0.0699795020852163,-0.15376543638595816,0.0017683882552762588,-0.18756646472016988,-0.09289708476844559,-0.046135468414171925,0.4200454055647276,0.25425955187316224,0.0020783716950524135,0.4557897823776463,-0.09656416116329526,-0.12849030561217253,-0.21504878697636506,-0.18358080826605094,0.49420422203243586,-0.03554694447315146,-0.2711323951696282,0.4945762287366213,-0.11955429364483287,-0.13235667787775712,-0.17845348210835327,-0.1879350039448651,0.2349506251662069,0.38286250879195405,-0.20253886238214922,0.0441967508180376,-0.021875831857173553,0.15599995376171155,0.27678076462422,0.26482256585772423,-0.20731275034984137,-0.024803121893734816,-0.1580728650077388,0.4134608400094595,-0.15907375221597814,-0.10520517456160856,-0.18177499355393065,-0.08714398599193791,0.25231467730357315,-0.09636266408571072,-0.08803530973434505,0.46661962915803096,-0.17837811630798472,0.033402622621976116,0.12913932662866512,-0.15814360300653194,0.13766245250383374,-0.10421221695790664,-0.06020752154279584,0.3936759051716387,-0.2297985396422098,-0.0790348200681875,0.24247344859874922,-0.1236033976208127,-0.13508100463046527,-0.13841381371748226,-0.10190785388650697,-0.07670372651139101,-0.10515611570465956,-0.007549767911247163,-0.04355221687168123,0.29197897406802714,-0.1796732991738582,-0.20133739921941532,-0.25673261567236394,-0.08984559989642543,-0.0747421207546472,0.12789415042255095,0.2690750012106051,0.4267655505784146,-0.19053803987919754,0.5065911793034427,-0.14392463453833268,-0.17841958607762884,-0.1406237899052855,0.2632285690561617,0.25447594028214593,-0.26025743843671223,0.005545256683736269,-0.1358850793530022,-0.18039793931204826,0.02443025464554683,0.5260041656989414,-0.3084635710278947,-0.08539805749991676,-0.060158903909464406,-0.03868580865204635,0.4295691268681882,-0.20139132915640626,-0.0306310990372392,0.3433137964032209,-0.0431633860516153,-0.08357331965105302,-0.0858175053744154,-0.04859091819767328,-0.08380910205786408,-0.1825092315878369,-0.045004933544276524,-0.028668677270381554,-0.16539237155784506,0.469933205468141,0.09390435822665837,-0.06745764491427833,-0.08976972627399492,0.0705590184549744,-0.1725579737644543,-0.16193556005137913,-0.05215400262797823,0.21426426192235032,-0.09481680812821146,-0.2224418454343361,-0.06544794357700427,-0.08547617957539,-0.17650504603989356,0.2691494707660278,-0.12781817689654684,-0.183833541600356,0.1936286122643585,-0.07499675186106547,-0.06847830421636088,-0.17590288826169378,-0.09856573883585326,-0.08852326469077952,-0.1972480549381555,-0.1456307375922469,0.4102998401079687,0.49859729536152314,0.16505967119053233,0.0059252679086998885,-0.13073219405158923,-0.23184458872125735,-0.07856207206939766,-0.20256405644832529,-0.19500768179784309,-0.14449129382772563,0.25646341086395563,-0.0781690339250301,-0.20307035659213457,-0.1382684550320107,-0.15270950122827834,-0.06730202742820966,0.19393097258361713,-0.01110429690888057,-0.02931946752974278,-0.20624065298896738,-0.07527152417649348,-0.11415309084760883,-0.11502689751437489,0.028466956997717223,0.07061097396527692,-0.1215038662092767,-0.17258640321535185,-0.2093114663524647,-0.23848618408571406,-0.15548919126685384,-0.07635256793581895,-0.12978304071064156,-0.18312110725712227,-0.11760911763016553,-0.07667047918198762,-0.17977132799607778,-0.24167378710623938,-0.09712755160534639,-0.23327934539878137,-0.16875272760188578,0.4975873773160057,-0.13851899275657312,0.4714825703146721,-0.09583092602232578,0.17763045143790182,-0.19136228658482907,0.006115919379362301,-0.026188893963654133,-0.17691117468466233,0.2676110283407566,-0.2004320715703759,-0.1750681830089029,-0.1734778009995367,-0.2602511431151143,-0.21962285469348286,-0.20116730143987405,0.35467017236775134,-0.2468528210692819,-0.1604736435801909,0.5640781139274046,-0.07154106858700195,0.43086497540020435,-0.19840749150800685,-0.12771048960898473,0.5756917486281753,0.163089772004668,0.14072484791603332,-0.06291330905556629,-0.04124797390114464],"type":"scattergl"}],                        {"hovermode":"closest","paper_bgcolor":"#fff","plot_bgcolor":"#fff","showlegend":false,"title":{"text":"Dependence plot for scaling__age"},"xaxis":{"title":{"text":"scaling__age"}},"yaxis":{"title":{"text":"SHAP value"}},"template":{"data":{"scatter":[{"type":"scatter"}]}},"margin":{"t":40,"b":40,"l":40,"r":40}},                        {"responsive": true}                    )                };                            </script>        </div>
+</div>
+        
+</div> 
+    
+    </div>
+  </div>
+</div>
+
+</div>
+        
+</div> 
+    
+</div>
+        
+</div> 
+    
+    </div>
+</div>
+    
+</div>
+
+</div>
+<script type="text/javascript">
+var triggerTabList = [].slice.call(document.querySelectorAll('#myTab button'))
+triggerTabList.forEach(function (triggerEl) {
+  var tabTrigger = new bootstrap.Tab(triggerEl)
+
+  triggerEl.addEventListener('click', function (event) {
+    event.preventDefault()
+    tabTrigger.show()
+    window.dispatchEvent(new Event('resize'));
+  })
+})
+</script>
+
+</div>
+
+</body>
+
+<script type="text/javascript">
+window.dispatchEvent(new Event('resize'));
+</script>
+        
+</html>
+    
